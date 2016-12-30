@@ -1,13 +1,15 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="6Qc-d2-4oQ">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--MenuVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MenuVC" customModule="proyectoFinal" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +17,97 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j55-Gd-cN8">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="RUTAS"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bienvenido al Proyecto Final" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t9Q-A7-lEy">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9jL-eA-eP6">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Leer QR"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vwx-NO-7AK">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Acerca de"/>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="j55-Gd-cN8" firstAttribute="trailing" secondItem="9jL-eA-eP6" secondAttribute="trailing" id="5wi-EX-wlc"/>
+                            <constraint firstItem="t9Q-A7-lEy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="C20-N8-MzN"/>
+                            <constraint firstItem="Vwx-NO-7AK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="78" id="E1l-L2-DEk"/>
+                            <constraint firstItem="9jL-eA-eP6" firstAttribute="top" secondItem="j55-Gd-cN8" secondAttribute="bottom" constant="34" id="SKV-ah-b77"/>
+                            <constraint firstItem="9jL-eA-eP6" firstAttribute="trailing" secondItem="Vwx-NO-7AK" secondAttribute="trailing" id="U0e-9F-Wkn"/>
+                            <constraint firstItem="Vwx-NO-7AK" firstAttribute="top" secondItem="9jL-eA-eP6" secondAttribute="bottom" constant="28" id="a8n-XW-ffX"/>
+                            <constraint firstItem="j55-Gd-cN8" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="224" id="asU-n6-jRp"/>
+                            <constraint firstItem="t9Q-A7-lEy" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="91" id="ngI-rq-Ukr"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="j55-Gd-cN8"/>
+                                <exclude reference="t9Q-A7-lEy"/>
+                                <exclude reference="9jL-eA-eP6"/>
+                                <exclude reference="Vwx-NO-7AK"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="C20-N8-MzN"/>
+                                <exclude reference="ngI-rq-Ukr"/>
+                                <exclude reference="5wi-EX-wlc"/>
+                                <exclude reference="asU-n6-jRp"/>
+                                <exclude reference="SKV-ah-b77"/>
+                                <exclude reference="U0e-9F-Wkn"/>
+                                <exclude reference="E1l-L2-DEk"/>
+                                <exclude reference="a8n-XW-ffX"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular">
+                            <mask key="subviews">
+                                <include reference="j55-Gd-cN8"/>
+                                <include reference="t9Q-A7-lEy"/>
+                                <include reference="9jL-eA-eP6"/>
+                                <include reference="Vwx-NO-7AK"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="C20-N8-MzN"/>
+                                <include reference="ngI-rq-Ukr"/>
+                                <include reference="5wi-EX-wlc"/>
+                                <include reference="asU-n6-jRp"/>
+                                <include reference="SKV-ah-b77"/>
+                                <include reference="U0e-9F-Wkn"/>
+                                <include reference="E1l-L2-DEk"/>
+                                <include reference="a8n-XW-ffX"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <navigationItem key="navigationItem" id="m95-Fa-Evr"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1487" y="-5.25"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="sah-h7-GKR">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6Qc-d2-4oQ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cmn-gA-dOB">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="1ax-RD-HQs"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WfB-1V-SEr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="785" y="-5.25"/>
         </scene>
     </scenes>
 </document>
