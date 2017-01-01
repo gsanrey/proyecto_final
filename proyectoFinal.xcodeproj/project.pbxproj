@@ -12,6 +12,15 @@
 		B126D8D71E163C95009650C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B126D8D61E163C95009650C8 /* Assets.xcassets */; };
 		B126D8DA1E163C95009650C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B126D8D81E163C95009650C8 /* LaunchScreen.storyboard */; };
 		B126D8E21E163F5F009650C8 /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B126D8E11E163F5F009650C8 /* MenuVC.swift */; };
+		B126D8E51E1640DC009650C8 /* cRuta.swift in Sources */ = {isa = PBXBuildFile; fileRef = B126D8E31E1640DC009650C8 /* cRuta.swift */; };
+		B126D8E61E1640DC009650C8 /* PuntoDeInteres.swift in Sources */ = {isa = PBXBuildFile; fileRef = B126D8E41E1640DC009650C8 /* PuntoDeInteres.swift */; };
+		B126D8E81E16414F009650C8 /* rutasTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B126D8E71E16414F009650C8 /* rutasTVC.swift */; };
+		B126D8EA1E16427F009650C8 /* infoRutaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B126D8E91E16427F009650C8 /* infoRutaVC.swift */; };
+		B126D8EC1E164795009650C8 /* MapaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B126D8EB1E164795009650C8 /* MapaVC.swift */; };
+		B126D8EE1E164CBB009650C8 /* PuntoDeInteresVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B126D8ED1E164CBB009650C8 /* PuntoDeInteresVC.swift */; };
+		B126D9321E16A11B009650C8 /* obtieneCodigoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B126D9311E16A11B009650C8 /* obtieneCodigoVC.swift */; };
+		B126D9341E16A345009650C8 /* DecodificadoQRVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B126D9331E16A345009650C8 /* DecodificadoQRVC.swift */; };
+		B126D9361E16AA07009650C8 /* ControlDeNavegacion.swift in Sources */ = {isa = PBXBuildFile; fileRef = B126D9351E16AA07009650C8 /* ControlDeNavegacion.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +31,15 @@
 		B126D8D91E163C95009650C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B126D8DB1E163C95009650C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B126D8E11E163F5F009650C8 /* MenuVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
+		B126D8E31E1640DC009650C8 /* cRuta.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cRuta.swift; sourceTree = "<group>"; };
+		B126D8E41E1640DC009650C8 /* PuntoDeInteres.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PuntoDeInteres.swift; sourceTree = "<group>"; };
+		B126D8E71E16414F009650C8 /* rutasTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = rutasTVC.swift; sourceTree = "<group>"; };
+		B126D8E91E16427F009650C8 /* infoRutaVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = infoRutaVC.swift; sourceTree = "<group>"; };
+		B126D8EB1E164795009650C8 /* MapaVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapaVC.swift; sourceTree = "<group>"; };
+		B126D8ED1E164CBB009650C8 /* PuntoDeInteresVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PuntoDeInteresVC.swift; sourceTree = "<group>"; };
+		B126D9311E16A11B009650C8 /* obtieneCodigoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = obtieneCodigoVC.swift; sourceTree = "<group>"; };
+		B126D9331E16A345009650C8 /* DecodificadoQRVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecodificadoQRVC.swift; sourceTree = "<group>"; };
+		B126D9351E16AA07009650C8 /* ControlDeNavegacion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlDeNavegacion.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,10 +74,19 @@
 			children = (
 				B126D8CF1E163C95009650C8 /* AppDelegate.swift */,
 				B126D8E11E163F5F009650C8 /* MenuVC.swift */,
+				B126D8E71E16414F009650C8 /* rutasTVC.swift */,
+				B126D8E91E16427F009650C8 /* infoRutaVC.swift */,
+				B126D9311E16A11B009650C8 /* obtieneCodigoVC.swift */,
+				B126D9331E16A345009650C8 /* DecodificadoQRVC.swift */,
+				B126D9351E16AA07009650C8 /* ControlDeNavegacion.swift */,
+				B126D8ED1E164CBB009650C8 /* PuntoDeInteresVC.swift */,
+				B126D8EB1E164795009650C8 /* MapaVC.swift */,
 				B126D8D31E163C95009650C8 /* Main.storyboard */,
 				B126D8D61E163C95009650C8 /* Assets.xcassets */,
 				B126D8D81E163C95009650C8 /* LaunchScreen.storyboard */,
 				B126D8DB1E163C95009650C8 /* Info.plist */,
+				B126D8E31E1640DC009650C8 /* cRuta.swift */,
+				B126D8E41E1640DC009650C8 /* PuntoDeInteres.swift */,
 			);
 			path = proyectoFinal;
 			sourceTree = "<group>";
@@ -136,8 +163,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B126D8E61E1640DC009650C8 /* PuntoDeInteres.swift in Sources */,
+				B126D8E51E1640DC009650C8 /* cRuta.swift in Sources */,
+				B126D8EA1E16427F009650C8 /* infoRutaVC.swift in Sources */,
+				B126D9341E16A345009650C8 /* DecodificadoQRVC.swift in Sources */,
+				B126D8EE1E164CBB009650C8 /* PuntoDeInteresVC.swift in Sources */,
+				B126D8EC1E164795009650C8 /* MapaVC.swift in Sources */,
 				B126D8D01E163C95009650C8 /* AppDelegate.swift in Sources */,
 				B126D8E21E163F5F009650C8 /* MenuVC.swift in Sources */,
+				B126D9361E16AA07009650C8 /* ControlDeNavegacion.swift in Sources */,
+				B126D9321E16A11B009650C8 /* obtieneCodigoVC.swift in Sources */,
+				B126D8E81E16414F009650C8 /* rutasTVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,6 +292,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = gsanrey.proyectoFinal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -267,6 +304,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = gsanrey.proyectoFinal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};
@@ -289,6 +327,7 @@
 				B126D8E01E163C95009650C8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

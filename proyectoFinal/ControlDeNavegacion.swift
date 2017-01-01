@@ -1,5 +1,5 @@
 //
-//  MenuVC.swift
+//  ControlDeNavegacion.swift
 //  proyectoFinal
 //
 //  Created by Gabriel Urso Santana Reyes on 30/12/16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MenuVC: UIViewController {
+class ControlDeNavegacion: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,23 +16,25 @@ class MenuVC: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-    @IBAction func acerdaDe(sender: UIButton) {
-        let ventana = UIAlertController(title: "Acerca de", message: "Proyecto Final de Desarrollo de Aplicaciones iOS. Aplicación desarrollada por ©Gabriel Urso Santana Reyes ", preferredStyle: UIAlertControllerStyle.Alert)
-        ventana.addAction(UIAlertAction(title: "continuar", style: UIAlertActionStyle.Default, handler: { (nil) in
-            print("continuamos...")
-            
-        }))
-        self.presentViewController(ventana, animated: true, completion: nil)
-
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
-    /*
+    
+
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let origen = sender as! obtieneCodigoVC
+        let destino = segue.destinationViewController as! DecodificadoQRVC
+        origen.sesion?.stopRunning()
+        destino.url = origen.urls
+        
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
+    
 
 }
