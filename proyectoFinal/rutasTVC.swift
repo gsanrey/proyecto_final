@@ -26,7 +26,9 @@ class rutasTVC: UITableViewController {
         self.title = "RUTAS"
         aRutas = [cRuta]()
         aRutas!.append(cRuta(nombre: "primera", descripcion: "la numero uno, primera"))
+        aRutas![0].foto = UIImage(named: "tec")
         aRutas!.append(cRuta(nombre: "segunda", descripcion: "la segunda"))
+        aRutas![1].foto = UIImage(named: "tec")
         
         let coorPtoInteres = CLLocationCoordinate2D(latitude: 19.52748, longitude: -96.92315)
         aRutas![0].puntosDeInteres.append(PuntoDeInteres(nombre: "prueba", coordenada: coorPtoInteres))

@@ -27,11 +27,14 @@ class MapaVC: UIViewController, CLLocationManagerDelegate, UIImagePickerControll
         self.localizador.desiredAccuracy = kCLLocationAccuracyBest
         self.localizador.requestWhenInUseAuthorization()
         miCamara.delegate = self
+        
+        mapa.delegate = self
     }
 
     func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
         if status == .AuthorizedWhenInUse{
             self.localizador.startUpdatingLocation()
+            mapa.showsUserLocation = true
         }else{
             self.localizador.stopUpdatingLocation()
         }
@@ -40,9 +43,9 @@ class MapaVC: UIViewController, CLLocationManagerDelegate, UIImagePickerControll
         
         if let punto = manager.location{
             print("\(manager.location!.coordinate.latitude)  - \(manager.location!.coordinate.longitude) . \(manager.location!.horizontalAccuracy)")
-            mapa.centerCoordinate = punto.coordinate
+            //mapa.centerCoordinate = punto.coordinate
             if nuevaRuta?.camino.count == 0{
-                let region = MKCoordinateRegionMakeWithDistance(punto.coordinate, 30, 30)
+                let region = MKCoordinateRegionMakeWithDistance(punto.coordinate, 300, 300)
                 mapa.setRegion(region, animated: true)
                 mapa.centerCoordinate = punto.coordinate
             }
