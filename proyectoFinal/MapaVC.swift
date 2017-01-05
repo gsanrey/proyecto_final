@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class MapaVC: UIViewController, CLLocationManagerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class MapaVC: UIViewController, CLLocationManagerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, MKMapViewDelegate {
 
     @IBOutlet weak var mapa: MKMapView!
     
@@ -41,7 +41,14 @@ class MapaVC: UIViewController, CLLocationManagerDelegate, UIImagePickerControll
         if let punto = manager.location{
             print("\(manager.location!.coordinate.latitude)  - \(manager.location!.coordinate.longitude) . \(manager.location!.horizontalAccuracy)")
             mapa.centerCoordinate = punto.coordinate
+            if nuevaRuta?.camino.count == 0{
+                let region = MKCoordinateRegionMakeWithDistance(punto.coordinate, 30, 30)
+                mapa.setRegion(region, animated: true)
+                mapa.centerCoordinate = punto.coordinate
+            }
             nuevaRuta!.camino.append(punto.coordinate)
+            let polyline = MKPolyline(coordinates: &(nuevaRuta!.camino), count: nuevaRuta!.camino.count)
+            mapa.addOverlay(polyline, level: MKOverlayLevel.AboveRoads)
         }
     }
     
@@ -69,7 +76,7 @@ class MapaVC: UIViewController, CLLocationManagerDelegate, UIImagePickerControll
     
     @IBAction func aniadePuntoInteres(sender: UIButton) {
         
-        var vista = UIAlertController(title: "Añade Punto de Interés", message: "...", preferredStyle: UIAlertControllerStyle.Alert)
+        let vista = UIAlertController(title: "Añade Punto de Interés", message: "...", preferredStyle: UIAlertControllerStyle.Alert)
         let textField = vista.addTextFieldWithConfigurationHandler { (nil) in
             //..
         }
@@ -90,6 +97,16 @@ class MapaVC: UIViewController, CLLocationManagerDelegate, UIImagePickerControll
         self.presentViewController(vista, animated: true, completion: nil)
         
     }
+    
+    
+    
+    func mapView(mapView: MKMapView, rendererForOverlay overlay: MKOverlay) -> MKOverlayRenderer {
+        let renderer = MKPolylineRenderer(overlay: overlay)
+        renderer.strokeColor = UIColor.blueColor()
+        renderer.lineWidth = 3.0
+        return renderer
+    }
+    
     /*
     // MARK: - Navigation
 

@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class infoRutaVC: UIViewController, CLLocationManagerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, MKMapViewDelegate  {
+class infoRutaVC: UIViewController, CLLocationManagerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, MKMapViewDelegate, UITextFieldDelegate  {
 
     var ruta: cRuta? = nil
 
@@ -18,6 +18,8 @@ class infoRutaVC: UIViewController, CLLocationManagerDelegate, UIImagePickerCont
     @IBOutlet weak var mapa: MKMapView!
     @IBOutlet weak var foto: UIImageView!
     
+    @IBOutlet weak var botonComparte: UIBarButtonItem!
+    
     private var miCamara = UIImagePickerController()
 
     
@@ -25,13 +27,18 @@ class infoRutaVC: UIViewController, CLLocationManagerDelegate, UIImagePickerCont
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        self.title = "Información de la ruta"
+        
+        eNombre.delegate = self
+        eDescripcion.delegate = self
+        
         eNombre.text = self.ruta?.nombre
         eDescripcion.text  = self.ruta?.descripcion
         if let fotoHecha = ruta?.foto{
             foto.image = fotoHecha
         }
         mapa.delegate = self
-        
         
         for anotacion in (ruta?.puntosDeInteres)!{
             let pin = MKPointAnnotation()
@@ -40,8 +47,6 @@ class infoRutaVC: UIViewController, CLLocationManagerDelegate, UIImagePickerCont
             mapa.addAnnotation(pin)
             //mapa.centerCoordinate = anotacion.coordenada!
         }
-            
-
         
         let centro = ruta!.camino[0]
         let region = MKCoordinateRegionMakeWithDistance(centro, 3000, 3000)
@@ -69,12 +74,6 @@ class infoRutaVC: UIViewController, CLLocationManagerDelegate, UIImagePickerCont
         ruta?.foto = image
         miCamara.dismissViewControllerAnimated(true, completion: nil)
     }
-    /*
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-        foto.image=info[UIImagePickerControllerOriginalImage] as? UIImage
-        ruta?.foto
-        miCamara.dismissViewControllerAnimated(true, completion: nil)
-    }*/
 
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
         miCamara.dismissViewControllerAnimated(true, completion: nil)
@@ -85,6 +84,27 @@ class infoRutaVC: UIViewController, CLLocationManagerDelegate, UIImagePickerCont
         renderer.strokeColor = UIColor.blueColor()
         renderer.lineWidth = 3.0
         return renderer
+    }
+    
+    @IBAction func comparte(sender: UIBarButtonItem) {
+        print ("Vamos a compartir la ruta!")
+        var elementos: [AnyObject] = []
+        elementos.append(self.ruta!.nombre)
+        elementos.append(self.ruta!.descripcion)
+
+        let actividadRD = UIActivityViewController(activityItems: elementos, applicationActivities: nil)
+        actividadRD.popoverPresentationController?.sourceView = self.view
+        self.presentViewController(actividadRD, animated: true, completion: nil)
+        
+        
+    }
+
+    @IBAction func ocultaTeclado(sender: UITextField){
+        sender.resignFirstResponder() // oculta el teclado al pulsar Intro
+    }
+    @IBAction func pulsaFondoOcultaTeclado(sender: UIControl){
+        eNombre.resignFirstResponder()
+        eDescripcion.resignFirstResponder()
     }
     
     /*

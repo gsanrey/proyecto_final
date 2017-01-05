@@ -11,7 +11,11 @@ import CoreLocation
 
 class rutasTVC: UITableViewController {
     
-    var aRutas = [cRuta(nombre: "0", descripcion: "la numero uno, primera"), cRuta(nombre: "1", descripcion: "la segunda")]
+    var aRutas: [cRuta]? = nil
+    
+    override func viewWillAppear(animated: Bool) {
+        self.tableView.reloadData()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,23 +24,23 @@ class rutasTVC: UITableViewController {
         // self.clearsSelectionOnViewWillAppear = false
         
         self.title = "RUTAS"
+        aRutas = [cRuta]()
+        aRutas!.append(cRuta(nombre: "primera", descripcion: "la numero uno, primera"))
+        aRutas!.append(cRuta(nombre: "segunda", descripcion: "la segunda"))
         
         let coorPtoInteres = CLLocationCoordinate2D(latitude: 19.52748, longitude: -96.92315)
-        aRutas[0].puntosDeInteres.append(PuntoDeInteres(nombre: "prueba", coordenada: coorPtoInteres))
-        aRutas[0].camino.append(CLLocationCoordinate2D(latitude: 19.52748, longitude: -96.92315))
-        aRutas[0].camino.append(CLLocationCoordinate2D(latitude: 19.53748, longitude: -96.94315))
-        aRutas[0].camino.append(CLLocationCoordinate2D(latitude: 19.54748, longitude: -96.93315))
+        aRutas![0].puntosDeInteres.append(PuntoDeInteres(nombre: "prueba", coordenada: coorPtoInteres))
+        aRutas![0].camino.append(CLLocationCoordinate2D(latitude: 19.52748, longitude: -96.92315))
+        aRutas![0].camino.append(CLLocationCoordinate2D(latitude: 19.53748, longitude: -96.94315))
+        aRutas![0].camino.append(CLLocationCoordinate2D(latitude: 19.54748, longitude: -96.93315))
 
-        aRutas[1].camino.append(CLLocationCoordinate2D(latitude: 19.359727, longitude: -99.257700))
-        aRutas[1].camino.append(CLLocationCoordinate2D(latitude: 19.362896, longitude: -99.268846))
-        aRutas[1].camino.append(CLLocationCoordinate2D(latitude: 19.358543, longitude: -99.276304))
+        aRutas![1].camino.append(CLLocationCoordinate2D(latitude: 19.359727, longitude: -99.257700))
+        aRutas![1].camino.append(CLLocationCoordinate2D(latitude: 19.362896, longitude: -99.268846))
+        aRutas![1].camino.append(CLLocationCoordinate2D(latitude: 19.358543, longitude: -99.276304))
         
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+
     
     // MARK: - Table view data source
     
@@ -47,14 +51,14 @@ class rutasTVC: UITableViewController {
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return aRutas.count
+        return aRutas!.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("celda", forIndexPath: indexPath)
         
         // Configure the cell...
-        cell.textLabel?.text = aRutas[indexPath.row].nombre
+        cell.textLabel?.text = aRutas![indexPath.row].nombre
         return cell
     }
     
@@ -95,9 +99,11 @@ class rutasTVC: UITableViewController {
     
     @IBAction func aniade(sender: UIBarButtonItem) {
         print("Añadiendo para probar")
-        aRutas.append(cRuta(nombre: "2", descripcion: "la tercera"))
+        aRutas!.append(cRuta(nombre: "2", descripcion: "la tercera"))
         self.tableView.reloadData()
     }
+    
+    
     // MARK: - Navigation
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -105,16 +111,16 @@ class rutasTVC: UITableViewController {
         
         if sender?.title == "NUEVA"{
             let creaRuta = segue.destinationViewController as! MapaVC
-            var nuevaRuta = cRuta(nombre:  String(aRutas.count + 1), descripcion: "")
+            let nuevaRuta = cRuta(nombre:  String(aRutas!.count + 1), descripcion: "")
             creaRuta.nuevaRuta = nuevaRuta
-            self.aRutas.append(nuevaRuta)
+            self.aRutas!.append(nuevaRuta)
             self.tableView.reloadData()
             return
         }
         
         let info = segue.destinationViewController as! infoRutaVC
         let ip = self.tableView.indexPathForSelectedRow
-        info.ruta = self.aRutas[(ip?.row)!]
+        info.ruta = self.aRutas![(ip?.row)!]
         
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
