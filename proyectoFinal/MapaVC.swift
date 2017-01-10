@@ -110,6 +110,51 @@ class MapaVC: UIViewController, CLLocationManagerDelegate, UIImagePickerControll
         return renderer
     }
     
+    
+    // When user taps on the disclosure button you can perform a segue to navigate to another view controller
+    func mapView(mapView: MKMapView!, annotationView view: MKAnnotationView!, calloutAccessoryControlTapped control: UIControl!) {
+        if control == view.rightCalloutAccessoryView{
+            print("HOLAAAAA")
+            //println(view.annotation.title) // annotation's title
+            //println(view.annotation.subtitle) // annotation's subttitle
+            
+            //Perform a segue here to navigate to another viewcontroller
+            // On tapping the disclosure button you will get here
+            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+            
+            let nextViewController = storyBoard.instantiateViewControllerWithIdentifier("nextView") as! ComoLlegarVC
+            self.presentViewController(nextViewController, animated:true, completion:nil)
+            
+        }
+    }
+    
+    // Here we add disclosure button inside annotation window
+    func mapView(mapView: MKMapView!, viewForAnnotation annotation: MKAnnotation!) -> MKAnnotationView! {
+        
+        print("viewForannotation")
+        if annotation is MKUserLocation {
+            return nil
+        }
+        
+        let reuseId = "pin"
+        var pinView = mapView.dequeueReusableAnnotationViewWithIdentifier(reuseId) as? MKPinAnnotationView
+        
+        if pinView == nil {
+            //println("Pinview was nil")
+            pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
+            pinView!.canShowCallout = true
+            pinView!.animatesDrop = true
+        }
+        
+        let button = UIButton(type: UIButtonType.DetailDisclosure)
+        //.buttonWithType(UIButtonType.DetailDisclosure) as UIButton // button with info sign in it
+        
+        pinView?.rightCalloutAccessoryView = button
+        
+        
+        return pinView
+    }
+    
     /*
     // MARK: - Navigation
 

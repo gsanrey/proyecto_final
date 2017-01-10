@@ -20,6 +20,7 @@
 		B126D9321E16A11B009650C8 /* obtieneCodigoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B126D9311E16A11B009650C8 /* obtieneCodigoVC.swift */; };
 		B126D9341E16A345009650C8 /* DecodificadoQRVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B126D9331E16A345009650C8 /* DecodificadoQRVC.swift */; };
 		B126D9361E16AA07009650C8 /* ControlDeNavegacion.swift in Sources */ = {isa = PBXBuildFile; fileRef = B126D9351E16AA07009650C8 /* ControlDeNavegacion.swift */; };
+		B1C5301E1E2512D5000D6D65 /* ComoLlegarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C5301D1E2512D5000D6D65 /* ComoLlegarVC.swift */; };
 		B1D551BA1E1D0983002099FA /* EventosTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D551B91E1D0983002099FA /* EventosTVC.swift */; };
 		B1D551BC1E1D0AC0002099FA /* evento.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D551BB1E1D0AC0002099FA /* evento.swift */; };
 		B1D551BE1E1D1EB9002099FA /* EventoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D551BD1E1D1EB9002099FA /* EventoCell.swift */; };
@@ -41,6 +42,7 @@
 		B126D9311E16A11B009650C8 /* obtieneCodigoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = obtieneCodigoVC.swift; sourceTree = "<group>"; };
 		B126D9331E16A345009650C8 /* DecodificadoQRVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecodificadoQRVC.swift; sourceTree = "<group>"; };
 		B126D9351E16AA07009650C8 /* ControlDeNavegacion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlDeNavegacion.swift; sourceTree = "<group>"; };
+		B1C5301D1E2512D5000D6D65 /* ComoLlegarVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComoLlegarVC.swift; sourceTree = "<group>"; };
 		B1D551B91E1D0983002099FA /* EventosTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventosTVC.swift; sourceTree = "<group>"; };
 		B1D551BB1E1D0AC0002099FA /* evento.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = evento.swift; sourceTree = "<group>"; };
 		B1D551BD1E1D1EB9002099FA /* EventoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventoCell.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 				B126D8E11E163F5F009650C8 /* MenuVC.swift */,
 				B126D8E71E16414F009650C8 /* rutasTVC.swift */,
 				B126D8E91E16427F009650C8 /* infoRutaVC.swift */,
+				B1C5301D1E2512D5000D6D65 /* ComoLlegarVC.swift */,
 				B126D9311E16A11B009650C8 /* obtieneCodigoVC.swift */,
 				B1D551B91E1D0983002099FA /* EventosTVC.swift */,
 				B1D551BD1E1D1EB9002099FA /* EventoCell.swift */,
@@ -174,6 +177,7 @@
 				B126D8E51E1640DC009650C8 /* cRuta.swift in Sources */,
 				B126D8EA1E16427F009650C8 /* infoRutaVC.swift in Sources */,
 				B126D9341E16A345009650C8 /* DecodificadoQRVC.swift in Sources */,
+				B1C5301E1E2512D5000D6D65 /* ComoLlegarVC.swift in Sources */,
 				B1D551BA1E1D0983002099FA /* EventosTVC.swift in Sources */,
 				B126D8EC1E164795009650C8 /* MapaVC.swift in Sources */,
 				B126D8D01E163C95009650C8 /* AppDelegate.swift in Sources */,
