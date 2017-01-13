@@ -115,15 +115,20 @@ class MapaVC: UIViewController, CLLocationManagerDelegate, UIImagePickerControll
     func mapView(mapView: MKMapView!, annotationView view: MKAnnotationView!, calloutAccessoryControlTapped control: UIControl!) {
         if control == view.rightCalloutAccessoryView{
             print("HOLAAAAA")
-            //println(view.annotation.title) // annotation's title
-            //println(view.annotation.subtitle) // annotation's subttitle
             
             //Perform a segue here to navigate to another viewcontroller
             // On tapping the disclosure button you will get here
-            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+            let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
             
             let nextViewController = storyBoard.instantiateViewControllerWithIdentifier("nextView") as! ComoLlegarVC
-            self.presentViewController(nextViewController, animated:true, completion:nil)
+            //self.presentViewController(nextViewController, animated:true, completion:nil)
+            let puntoLugar = MKPlacemark(coordinate: (view.annotation?.coordinate)!, addressDictionary: nil)
+            nextViewController.destino = MKMapItem(placemark: puntoLugar)
+            nextViewController.destino.name = (view.annotation?.title)!
+            
+            self.showViewController(nextViewController, sender:self)
+            //let ve = UIStoryboardSegue(identifier: "nextViewq", source: self, destination: nextViewController)
+            //self.prepareForSegue(ve, sender: self)
             
         }
     }
@@ -148,10 +153,7 @@ class MapaVC: UIViewController, CLLocationManagerDelegate, UIImagePickerControll
         
         let button = UIButton(type: UIButtonType.DetailDisclosure)
         //.buttonWithType(UIButtonType.DetailDisclosure) as UIButton // button with info sign in it
-        
         pinView?.rightCalloutAccessoryView = button
-        
-        
         return pinView
     }
     
@@ -162,6 +164,9 @@ class MapaVC: UIViewController, CLLocationManagerDelegate, UIImagePickerControll
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        print("HOLAAAAA")
+
+        
     }
     */
 

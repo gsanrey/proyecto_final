@@ -13,7 +13,7 @@ class ComoLlegarVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelega
     
     @IBOutlet weak var mapaRuta: MKMapView!
     var destino: MKMapItem!
-    var origen: MKMapItem!
+    var origen: MKMapItem? = nil
 
     let localizador = CLLocationManager()
 
@@ -27,10 +27,15 @@ class ComoLlegarVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelega
         
         mapaRuta.delegate = self
         
-        let puntoCoor = CLLocationCoordinate2D(latitude: 37.33157962, longitude: -122.03054783)
-        let puntoLugar = MKPlacemark(coordinate: puntoCoor, addressDictionary: nil)
-        destino = MKMapItem(placemark: puntoLugar)
-        destino.name = "..."
+        let anota = MKPointAnnotation()
+        anota.coordinate = destino.placemark.coordinate
+        anota.title = destino.name
+        mapaRuta.addAnnotation(anota)
+        
+        let region = MKCoordinateRegionMakeWithDistance(destino.placemark.coordinate, 300, 300)
+        mapaRuta.setRegion(region, animated: true)
+        mapaRuta.centerCoordinate = destino.placemark.coordinate
+        
     }
 
     func obtenerRuta(origen: MKMapItem, destino: MKMapItem){
@@ -56,10 +61,6 @@ class ComoLlegarVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelega
                 print(paso.instructions)
             }
         }
-        let centro = origen.placemark.coordinate
-        let region = MKCoordinateRegionMakeWithDistance(centro, 3000, 3000)
-        mapaRuta.setRegion(region, animated: true)
-        
     }
     func mapView(mapView: MKMapView, rendererForOverlay overlay: MKOverlay) -> MKOverlayRenderer {
         let renderer = MKPolylineRenderer(overlay: overlay)
@@ -79,11 +80,18 @@ class ComoLlegarVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelega
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
         if let punto = manager.location{
-            print("\(manager.location!.coordinate.latitude)  - \(manager.location!.coordinate.longitude) . \(manager.location!.horizontalAccuracy)")
+            print("Como llegar desde: \(manager.location!.coordinate.latitude)  - \(manager.location!.coordinate.longitude) . \(manager.location!.horizontalAccuracy)")
             let puntoLugar =  MKPlacemark(coordinate: punto.coordinate, addressDictionary: nil)
             origen = MKMapItem(placemark: puntoLugar)
-            origen.name = "POSICION ACTUAL"
-
+            origen!.name = "POSICION ACTUAL"
+            if origen != nil{
+                self.obtenerRuta(origen!, destino: destino!)
+            }
+            else{
+                let region = MKCoordinateRegionMakeWithDistance(punto.coordinate, 300, 300)
+                mapaRuta.setRegion(region, animated: true)
+                mapaRuta.centerCoordinate = punto.coordinate
+            }
         }
     }
     

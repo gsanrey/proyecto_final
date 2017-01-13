@@ -23,9 +23,42 @@ class EventosTVC: UITableViewController {
         self.title = "Listado de Eventos"
         eventos.append(Evento(nombre: "primer evento", descripcion: "es una prueba"))
         eventos.append(Evento(nombre: "segundo evento", descripcion: "es una prueba"))
+        sincroniza()
     }
 
+    func sincroniza() {
+        print ("Obteniendo listado de alumnos")
+        let jsonURL = NSURL(string: "http://localhost:8000/eventos/")!
+        /*
+         let sessionConfiguration = NSURLSessionConfiguration.ephemeralSessionConfiguration()
+         let session = NSURLSession(configuration: sessionConfiguration)
+         */
+        
+        let datos = NSData(contentsOfURL: jsonURL)
+        do{
+            let json = try NSJSONSerialization.JSONObjectWithData(datos!, options: NSJSONReadingOptions.MutableLeaves )
+            let evento = json as! NSDictionary
+            let eventos = evento["eventos"] as! NSArray
+            let nombre = eventos[2]["nombre"] as! NSString
+            let descripcion = eventos[1]["descripcion"] as! NSString
+            print(nombre, descripcion)
+            /*
+            for asignatura in asignaturas{
+                print("---------Asignatura \(asignatura["nombre"])--------------")
+                for alumno in asignatura["alumnos"] as! NSArray{
+                    let id = Int(alumno["id"] as! Int)
+                    print("el id del alumno es: \(id)")
+                }
+                print("-")
+            }
+            */
 
+        }
+        catch _ {
+        }
+    }
+    
+    
 
     // MARK: - Table view data source
 

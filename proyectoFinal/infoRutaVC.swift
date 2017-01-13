@@ -29,6 +29,9 @@ class infoRutaVC: UIViewController, CLLocationManagerDelegate, UIImagePickerCont
         // Do any additional setup after loading the view.
         
         self.title = "Información de la ruta"
+        let button1 = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Action, target: self, action: "comparte")
+        self.navigationItem.rightBarButtonItem = button1
+        
         
         eNombre.delegate = self
         eDescripcion.delegate = self
@@ -57,6 +60,19 @@ class infoRutaVC: UIViewController, CLLocationManagerDelegate, UIImagePickerCont
         mapa.addOverlay(polyline, level: MKOverlayLevel.AboveRoads)
         
         miCamara.delegate = self
+    }
+    
+    func comparte(){
+        var objetosParaCompartir = ["Los Puntos de Interés visitados!"]
+        for pInteres in (ruta?.puntosDeInteres)!{
+            objetosParaCompartir.append(pInteres.nombre!)
+        }
+        let actividadRD = UIActivityViewController(activityItems: objetosParaCompartir, applicationActivities: nil)
+        actividadRD.title = "Compartición de Puntos de Interés"
+        if UIDevice.currentDevice().userInterfaceIdiom == .Pad {
+            actividadRD.popoverPresentationController?.sourceView = self.view
+        }
+        self.presentViewController(actividadRD, animated: true, completion: nil)
     }
 
     @IBAction func guarda(sender: UIButton) {
@@ -107,6 +123,11 @@ class infoRutaVC: UIViewController, CLLocationManagerDelegate, UIImagePickerCont
         eDescripcion.resignFirstResponder()
     }
     
+    
+    
+    
+    
+    
     /*
     // MARK: - Navigation
 
@@ -117,4 +138,50 @@ class infoRutaVC: UIViewController, CLLocationManagerDelegate, UIImagePickerCont
     }
     */
 
+    
+    func mapView(mapView: MKMapView!, annotationView view: MKAnnotationView!, calloutAccessoryControlTapped control: UIControl!) {
+        if control == view.rightCalloutAccessoryView{
+            print("HOLAAAAA")
+            
+            //Perform a segue here to navigate to another viewcontroller
+            // On tapping the disclosure button you will get here
+            let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+            
+            let nextViewController = storyBoard.instantiateViewControllerWithIdentifier("nextView") as! ComoLlegarVC
+            //self.presentViewController(nextViewController, animated:true, completion:nil)
+            let puntoLugar = MKPlacemark(coordinate: (view.annotation?.coordinate)!, addressDictionary: nil)
+            nextViewController.destino = MKMapItem(placemark: puntoLugar)
+            nextViewController.destino.name = (view.annotation?.title)!
+            
+            self.showViewController(nextViewController, sender:self)
+            //let ve = UIStoryboardSegue(identifier: "nextViewq", source: self, destination: nextViewController)
+            //self.prepareForSegue(ve, sender: self)
+            
+        }
+    }
+    
+    // Here we add disclosure button inside annotation window
+    func mapView(mapView: MKMapView!, viewForAnnotation annotation: MKAnnotation!) -> MKAnnotationView! {
+        
+        print("viewForannotation")
+        if annotation is MKUserLocation {
+            return nil
+        }
+        
+        let reuseId = "pin"
+        var pinView = mapView.dequeueReusableAnnotationViewWithIdentifier(reuseId) as? MKPinAnnotationView
+        
+        if pinView == nil {
+            //println("Pinview was nil")
+            pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
+            pinView!.canShowCallout = true
+            pinView!.animatesDrop = true
+        }
+        
+        let button = UIButton(type: UIButtonType.DetailDisclosure)
+        //.buttonWithType(UIButtonType.DetailDisclosure) as UIButton // button with info sign in it
+        pinView?.rightCalloutAccessoryView = button
+        return pinView
+    }
+    
 }

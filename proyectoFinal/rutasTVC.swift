@@ -116,7 +116,7 @@ class rutasTVC: UITableViewController {
             let nuevaRuta = cRuta(nombre:  String(aRutas!.count + 1), descripcion: "")
             creaRuta.nuevaRuta = nuevaRuta
             self.aRutas!.append(nuevaRuta)
-            self.tableView.reloadData()
+            //self.tableView.reloadData()
             return
         }
         
