@@ -15,11 +15,6 @@ class EventosTVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         self.title = "Listado de Eventos"
         eventos.append(Evento(nombre: "primer evento", descripcion: "es una prueba"))
         eventos.append(Evento(nombre: "segundo evento", descripcion: "es una prueba"))
@@ -27,31 +22,24 @@ class EventosTVC: UITableViewController {
     }
 
     func sincroniza() {
-        print ("Obteniendo listado de alumnos")
-        let jsonURL = NSURL(string: "http://localhost:8000/eventos/")!
-        /*
-         let sessionConfiguration = NSURLSessionConfiguration.ephemeralSessionConfiguration()
-         let session = NSURLSession(configuration: sessionConfiguration)
-         */
+        print ("vamos por los datos!!")
+        let jsonURL = NSURL(string: "http://83.59.126.246:8000/events/listado")!
         
         let datos = NSData(contentsOfURL: jsonURL)
+        print ("esto es lo que tengo!!")
         do{
             let json = try NSJSONSerialization.JSONObjectWithData(datos!, options: NSJSONReadingOptions.MutableLeaves )
             let evento = json as! NSDictionary
+            print ("busco los eventos: ...")
             let eventos = evento["eventos"] as! NSArray
-            let nombre = eventos[2]["nombre"] as! NSString
-            let descripcion = eventos[1]["descripcion"] as! NSString
-            print(nombre, descripcion)
-            /*
-            for asignatura in asignaturas{
-                print("---------Asignatura \(asignatura["nombre"])--------------")
-                for alumno in asignatura["alumnos"] as! NSArray{
-                    let id = Int(alumno["id"] as! Int)
-                    print("el id del alumno es: \(id)")
-                }
-                print("-")
+            for evento in eventos{
+                print ("a por el nombre:")
+                let nombre = evento["nombre"] as! NSString
+                let descripcion = evento["descripcion"] as! NSString
+                let fecha = evento["fecha"] as! NSString
+                print(nombre, descripcion, fecha)
             }
-            */
+
 
         }
         catch _ {
@@ -74,8 +62,9 @@ class EventosTVC: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("evento", forIndexPath: indexPath) as! EventoCell
         cell.eNombre.text = eventos[indexPath.row].nombre
-        cell.bComparte.tag = indexPath.row
-        cell.bComparte.addTarget(self, action: "comparteEvento", forControlEvents: .TouchUpInside)
+        cell.eDescripcion.text = eventos[indexPath.row].descripcion
+        //cell.bComparte.tag = indexPath.row
+        //cell.bComparte.addTarget(self, action: "comparteEvento", forControlEvents: .TouchUpInside)
         return cell
     }
 
