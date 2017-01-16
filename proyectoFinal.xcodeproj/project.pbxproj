@@ -7,26 +7,101 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B10E89591E2AEEA000C8E035 /* RutasIC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10E89581E2AEEA000C8E035 /* RutasIC.swift */; };
 		B126D8D01E163C95009650C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B126D8CF1E163C95009650C8 /* AppDelegate.swift */; };
 		B126D8D51E163C95009650C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B126D8D31E163C95009650C8 /* Main.storyboard */; };
 		B126D8D71E163C95009650C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B126D8D61E163C95009650C8 /* Assets.xcassets */; };
 		B126D8DA1E163C95009650C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B126D8D81E163C95009650C8 /* LaunchScreen.storyboard */; };
 		B126D8E21E163F5F009650C8 /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B126D8E11E163F5F009650C8 /* MenuVC.swift */; };
 		B126D8E51E1640DC009650C8 /* cRuta.swift in Sources */ = {isa = PBXBuildFile; fileRef = B126D8E31E1640DC009650C8 /* cRuta.swift */; };
-		B126D8E61E1640DC009650C8 /* PuntoDeInteres.swift in Sources */ = {isa = PBXBuildFile; fileRef = B126D8E41E1640DC009650C8 /* PuntoDeInteres.swift */; };
+		B126D8E61E1640DC009650C8 /* cPuntoDeInteres.swift in Sources */ = {isa = PBXBuildFile; fileRef = B126D8E41E1640DC009650C8 /* cPuntoDeInteres.swift */; };
 		B126D8E81E16414F009650C8 /* rutasTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B126D8E71E16414F009650C8 /* rutasTVC.swift */; };
 		B126D8EA1E16427F009650C8 /* infoRutaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B126D8E91E16427F009650C8 /* infoRutaVC.swift */; };
 		B126D8EC1E164795009650C8 /* MapaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B126D8EB1E164795009650C8 /* MapaVC.swift */; };
 		B126D9321E16A11B009650C8 /* obtieneCodigoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B126D9311E16A11B009650C8 /* obtieneCodigoVC.swift */; };
 		B126D9341E16A345009650C8 /* DecodificadoQRVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B126D9331E16A345009650C8 /* DecodificadoQRVC.swift */; };
 		B126D9361E16AA07009650C8 /* ControlDeNavegacion.swift in Sources */ = {isa = PBXBuildFile; fileRef = B126D9351E16AA07009650C8 /* ControlDeNavegacion.swift */; };
+		B138BCBE1E292E2E00E91359 /* ARAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B138BCB91E292E2E00E91359 /* ARAnnotation.swift */; };
+		B138BCBF1E292E2E00E91359 /* ARAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B138BCBA1E292E2E00E91359 /* ARAnnotationView.swift */; };
+		B138BCC01E292E2E00E91359 /* ARConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B138BCBB1E292E2E00E91359 /* ARConfiguration.swift */; };
+		B138BCC11E292E2E00E91359 /* ARTrackingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B138BCBC1E292E2E00E91359 /* ARTrackingManager.swift */; };
+		B138BCC21E292E2E00E91359 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B138BCBD1E292E2E00E91359 /* ARViewController.swift */; };
+		B138BCC41E292E3700E91359 /* DebugMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B138BCC31E292E3700E91359 /* DebugMapViewController.swift */; };
+		B138BCCA1E292E5800E91359 /* DebugMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B138BCC61E292E5800E91359 /* DebugMapViewController.xib */; };
+		B138BCCB1E292E5800E91359 /* hdar_close.png in Resources */ = {isa = PBXBuildFile; fileRef = B138BCC71E292E5800E91359 /* hdar_close.png */; };
+		B138BCCC1E292E5800E91359 /* hdar_close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B138BCC81E292E5800E91359 /* hdar_close@2x.png */; };
+		B138BCCD1E292E5800E91359 /* hdar_close@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B138BCC91E292E5800E91359 /* hdar_close@3x.png */; };
+		B138BCCF1E292F6B00E91359 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B138BCCE1E292F6B00E91359 /* CoreLocation.framework */; };
+		B138BCD11E292F7400E91359 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B138BCD01E292F7400E91359 /* CoreMotion.framework */; };
+		B138BCD31E292F7B00E91359 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B138BCD21E292F7B00E91359 /* MapKit.framework */; };
+		B138BCD51E29300C00E91359 /* ARCV.swift in Sources */ = {isa = PBXBuildFile; fileRef = B138BCD41E29300C00E91359 /* ARCV.swift */; };
+		B138BCD71E29310700E91359 /* TestAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B138BCD61E29310700E91359 /* TestAnnotationView.swift */; };
+		B18BCC301E2978FC009B0909 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B18BCC2E1E2978FC009B0909 /* Interface.storyboard */; };
+		B18BCC321E2978FC009B0909 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B18BCC311E2978FC009B0909 /* Assets.xcassets */; };
+		B18BCC391E2978FC009B0909 /* mapaWatch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = B18BCC381E2978FC009B0909 /* mapaWatch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		B18BCC401E2978FC009B0909 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18BCC3F1E2978FC009B0909 /* InterfaceController.swift */; };
+		B18BCC421E2978FC009B0909 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18BCC411E2978FC009B0909 /* ExtensionDelegate.swift */; };
+		B18BCC441E2978FC009B0909 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18BCC431E2978FC009B0909 /* NotificationController.swift */; };
+		B18BCC461E2978FC009B0909 /* GlanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18BCC451E2978FC009B0909 /* GlanceController.swift */; };
+		B18BCC481E2978FC009B0909 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18BCC471E2978FC009B0909 /* ComplicationController.swift */; };
+		B18BCC4A1E2978FC009B0909 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B18BCC491E2978FC009B0909 /* Assets.xcassets */; };
+		B18BCC4E1E2978FC009B0909 /* mapaWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = B18BCC2C1E2978FC009B0909 /* mapaWatch.app */; };
+		B18BCC581E297AF5009B0909 /* tablaRutasIT.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18BCC571E297AF5009B0909 /* tablaRutasIT.swift */; };
 		B1C5301E1E2512D5000D6D65 /* ComoLlegarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C5301D1E2512D5000D6D65 /* ComoLlegarVC.swift */; };
 		B1D551BA1E1D0983002099FA /* EventosTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D551B91E1D0983002099FA /* EventosTVC.swift */; };
 		B1D551BC1E1D0AC0002099FA /* evento.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D551BB1E1D0AC0002099FA /* evento.swift */; };
 		B1D551BE1E1D1EB9002099FA /* EventoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D551BD1E1D1EB9002099FA /* EventoCell.swift */; };
+		B1F718D01E2BD667000F9E5C /* Fila.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F718CF1E2BD667000F9E5C /* Fila.swift */; };
+		B1F718E31E2C0C8C000F9E5C /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F718E21E2C0C8C000F9E5C /* DataController.swift */; };
+		B1F718E61E2C3346000F9E5C /* RutasModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B1F718E41E2C3346000F9E5C /* RutasModel.xcdatamodeld */; };
+		B1F718E91E2C3381000F9E5C /* Ruta+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F718E71E2C3381000F9E5C /* Ruta+CoreDataProperties.swift */; };
+		B1F718EA1E2C3381000F9E5C /* Ruta.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F718E81E2C3381000F9E5C /* Ruta.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		B18BCC3A1E2978FC009B0909 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B126D8C41E163C95009650C8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B18BCC371E2978FC009B0909;
+			remoteInfo = "mapaWatch Extension";
+		};
+		B18BCC4C1E2978FC009B0909 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B126D8C41E163C95009650C8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B18BCC2B1E2978FC009B0909;
+			remoteInfo = mapaWatch;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B18BCC541E2978FC009B0909 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				B18BCC391E2978FC009B0909 /* mapaWatch Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B18BCC561E2978FC009B0909 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				B18BCC4E1E2978FC009B0909 /* mapaWatch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		B10E89581E2AEEA000C8E035 /* RutasIC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RutasIC.swift; sourceTree = "<group>"; };
 		B126D8CC1E163C95009650C8 /* proyectoFinal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = proyectoFinal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B126D8CF1E163C95009650C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B126D8D41E163C95009650C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -35,21 +110,67 @@
 		B126D8DB1E163C95009650C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B126D8E11E163F5F009650C8 /* MenuVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
 		B126D8E31E1640DC009650C8 /* cRuta.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cRuta.swift; sourceTree = "<group>"; };
-		B126D8E41E1640DC009650C8 /* PuntoDeInteres.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PuntoDeInteres.swift; sourceTree = "<group>"; };
+		B126D8E41E1640DC009650C8 /* cPuntoDeInteres.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cPuntoDeInteres.swift; sourceTree = "<group>"; };
 		B126D8E71E16414F009650C8 /* rutasTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = rutasTVC.swift; sourceTree = "<group>"; };
 		B126D8E91E16427F009650C8 /* infoRutaVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = infoRutaVC.swift; sourceTree = "<group>"; };
 		B126D8EB1E164795009650C8 /* MapaVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapaVC.swift; sourceTree = "<group>"; };
 		B126D9311E16A11B009650C8 /* obtieneCodigoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = obtieneCodigoVC.swift; sourceTree = "<group>"; };
 		B126D9331E16A345009650C8 /* DecodificadoQRVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecodificadoQRVC.swift; sourceTree = "<group>"; };
 		B126D9351E16AA07009650C8 /* ControlDeNavegacion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlDeNavegacion.swift; sourceTree = "<group>"; };
+		B138BCB91E292E2E00E91359 /* ARAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARAnnotation.swift; sourceTree = "<group>"; };
+		B138BCBA1E292E2E00E91359 /* ARAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARAnnotationView.swift; sourceTree = "<group>"; };
+		B138BCBB1E292E2E00E91359 /* ARConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARConfiguration.swift; sourceTree = "<group>"; };
+		B138BCBC1E292E2E00E91359 /* ARTrackingManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARTrackingManager.swift; sourceTree = "<group>"; };
+		B138BCBD1E292E2E00E91359 /* ARViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
+		B138BCC31E292E3700E91359 /* DebugMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugMapViewController.swift; sourceTree = "<group>"; };
+		B138BCC61E292E5800E91359 /* DebugMapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DebugMapViewController.xib; sourceTree = "<group>"; };
+		B138BCC71E292E5800E91359 /* hdar_close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hdar_close.png; sourceTree = "<group>"; };
+		B138BCC81E292E5800E91359 /* hdar_close@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hdar_close@2x.png"; sourceTree = "<group>"; };
+		B138BCC91E292E5800E91359 /* hdar_close@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hdar_close@3x.png"; sourceTree = "<group>"; };
+		B138BCCE1E292F6B00E91359 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		B138BCD01E292F7400E91359 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		B138BCD21E292F7B00E91359 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		B138BCD41E29300C00E91359 /* ARCV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARCV.swift; sourceTree = "<group>"; };
+		B138BCD61E29310700E91359 /* TestAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestAnnotationView.swift; sourceTree = "<group>"; };
+		B18BCC2C1E2978FC009B0909 /* mapaWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mapaWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B18BCC2F1E2978FC009B0909 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		B18BCC311E2978FC009B0909 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B18BCC331E2978FC009B0909 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B18BCC381E2978FC009B0909 /* mapaWatch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "mapaWatch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B18BCC3E1E2978FC009B0909 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		B18BCC3F1E2978FC009B0909 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		B18BCC411E2978FC009B0909 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		B18BCC431E2978FC009B0909 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		B18BCC451E2978FC009B0909 /* GlanceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlanceController.swift; sourceTree = "<group>"; };
+		B18BCC471E2978FC009B0909 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		B18BCC491E2978FC009B0909 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B18BCC4B1E2978FC009B0909 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B18BCC571E297AF5009B0909 /* tablaRutasIT.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tablaRutasIT.swift; sourceTree = "<group>"; };
 		B1C5301D1E2512D5000D6D65 /* ComoLlegarVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComoLlegarVC.swift; sourceTree = "<group>"; };
 		B1D551B91E1D0983002099FA /* EventosTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventosTVC.swift; sourceTree = "<group>"; };
 		B1D551BB1E1D0AC0002099FA /* evento.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = evento.swift; sourceTree = "<group>"; };
 		B1D551BD1E1D1EB9002099FA /* EventoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventoCell.swift; sourceTree = "<group>"; };
+		B1F718CF1E2BD667000F9E5C /* Fila.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fila.swift; sourceTree = "<group>"; };
+		B1F718D11E2BFA6D000F9E5C /* proyectoFinal.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = proyectoFinal.entitlements; sourceTree = "<group>"; };
+		B1F718D21E2BFA94000F9E5C /* mapaWatch Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "mapaWatch Extension.entitlements"; sourceTree = "<group>"; };
+		B1F718E21E2C0C8C000F9E5C /* DataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		B1F718E51E2C3346000F9E5C /* RutasModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RutasModel.xcdatamodel; sourceTree = "<group>"; };
+		B1F718E71E2C3381000F9E5C /* Ruta+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Ruta+CoreDataProperties.swift"; path = "../Ruta+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		B1F718E81E2C3381000F9E5C /* Ruta.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Ruta.swift; path = ../Ruta.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		B126D8C91E163C95009650C8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B138BCD31E292F7B00E91359 /* MapKit.framework in Frameworks */,
+				B138BCD11E292F7400E91359 /* CoreMotion.framework in Frameworks */,
+				B138BCCF1E292F6B00E91359 /* CoreLocation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B18BCC351E2978FC009B0909 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -62,7 +183,12 @@
 		B126D8C31E163C95009650C8 = {
 			isa = PBXGroup;
 			children = (
+				B138BCD21E292F7B00E91359 /* MapKit.framework */,
+				B138BCD01E292F7400E91359 /* CoreMotion.framework */,
+				B138BCCE1E292F6B00E91359 /* CoreLocation.framework */,
 				B126D8CE1E163C95009650C8 /* proyectoFinal */,
+				B18BCC2D1E2978FC009B0909 /* mapaWatch */,
+				B18BCC3C1E2978FC009B0909 /* mapaWatch Extension */,
 				B126D8CD1E163C95009650C8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -71,6 +197,8 @@
 			isa = PBXGroup;
 			children = (
 				B126D8CC1E163C95009650C8 /* proyectoFinal.app */,
+				B18BCC2C1E2978FC009B0909 /* mapaWatch.app */,
+				B18BCC381E2978FC009B0909 /* mapaWatch Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -78,6 +206,10 @@
 		B126D8CE1E163C95009650C8 /* proyectoFinal */ = {
 			isa = PBXGroup;
 			children = (
+				B1F718D31E2C06E5000F9E5C /* CoreData */,
+				B1F718D11E2BFA6D000F9E5C /* proyectoFinal.entitlements */,
+				B138BCC51E292E3E00E91359 /* Resources */,
+				B138BCB71E292DEB00E91359 /* Classes */,
 				B126D8CF1E163C95009650C8 /* AppDelegate.swift */,
 				B126D8E11E163F5F009650C8 /* MenuVC.swift */,
 				B126D8E71E16414F009650C8 /* rutasTVC.swift */,
@@ -86,6 +218,8 @@
 				B126D9311E16A11B009650C8 /* obtieneCodigoVC.swift */,
 				B1D551B91E1D0983002099FA /* EventosTVC.swift */,
 				B1D551BD1E1D1EB9002099FA /* EventoCell.swift */,
+				B138BCD41E29300C00E91359 /* ARCV.swift */,
+				B138BCD61E29310700E91359 /* TestAnnotationView.swift */,
 				B126D9331E16A345009650C8 /* DecodificadoQRVC.swift */,
 				B126D9351E16AA07009650C8 /* ControlDeNavegacion.swift */,
 				B126D8EB1E164795009650C8 /* MapaVC.swift */,
@@ -95,9 +229,89 @@
 				B126D8DB1E163C95009650C8 /* Info.plist */,
 				B126D8E31E1640DC009650C8 /* cRuta.swift */,
 				B1D551BB1E1D0AC0002099FA /* evento.swift */,
-				B126D8E41E1640DC009650C8 /* PuntoDeInteres.swift */,
+				B126D8E41E1640DC009650C8 /* cPuntoDeInteres.swift */,
 			);
 			path = proyectoFinal;
+			sourceTree = "<group>";
+		};
+		B138BCB71E292DEB00E91359 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				B138BCB91E292E2E00E91359 /* ARAnnotation.swift */,
+				B138BCBA1E292E2E00E91359 /* ARAnnotationView.swift */,
+				B138BCBB1E292E2E00E91359 /* ARConfiguration.swift */,
+				B138BCBC1E292E2E00E91359 /* ARTrackingManager.swift */,
+				B138BCBD1E292E2E00E91359 /* ARViewController.swift */,
+				B138BCB81E292E0500E91359 /* Debug */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		B138BCB81E292E0500E91359 /* Debug */ = {
+			isa = PBXGroup;
+			children = (
+				B138BCC31E292E3700E91359 /* DebugMapViewController.swift */,
+			);
+			name = Debug;
+			sourceTree = "<group>";
+		};
+		B138BCC51E292E3E00E91359 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B138BCC61E292E5800E91359 /* DebugMapViewController.xib */,
+				B138BCC71E292E5800E91359 /* hdar_close.png */,
+				B138BCC81E292E5800E91359 /* hdar_close@2x.png */,
+				B138BCC91E292E5800E91359 /* hdar_close@3x.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		B18BCC2D1E2978FC009B0909 /* mapaWatch */ = {
+			isa = PBXGroup;
+			children = (
+				B18BCC2E1E2978FC009B0909 /* Interface.storyboard */,
+				B18BCC311E2978FC009B0909 /* Assets.xcassets */,
+				B18BCC331E2978FC009B0909 /* Info.plist */,
+			);
+			path = mapaWatch;
+			sourceTree = "<group>";
+		};
+		B18BCC3C1E2978FC009B0909 /* mapaWatch Extension */ = {
+			isa = PBXGroup;
+			children = (
+				B1F718D21E2BFA94000F9E5C /* mapaWatch Extension.entitlements */,
+				B18BCC3F1E2978FC009B0909 /* InterfaceController.swift */,
+				B10E89581E2AEEA000C8E035 /* RutasIC.swift */,
+				B1F718CF1E2BD667000F9E5C /* Fila.swift */,
+				B18BCC411E2978FC009B0909 /* ExtensionDelegate.swift */,
+				B18BCC571E297AF5009B0909 /* tablaRutasIT.swift */,
+				B18BCC431E2978FC009B0909 /* NotificationController.swift */,
+				B18BCC451E2978FC009B0909 /* GlanceController.swift */,
+				B18BCC471E2978FC009B0909 /* ComplicationController.swift */,
+				B18BCC491E2978FC009B0909 /* Assets.xcassets */,
+				B18BCC4B1E2978FC009B0909 /* Info.plist */,
+				B18BCC3D1E2978FC009B0909 /* Supporting Files */,
+			);
+			path = "mapaWatch Extension";
+			sourceTree = "<group>";
+		};
+		B18BCC3D1E2978FC009B0909 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B18BCC3E1E2978FC009B0909 /* PushNotificationPayload.apns */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B1F718D31E2C06E5000F9E5C /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				B1F718E71E2C3381000F9E5C /* Ruta+CoreDataProperties.swift */,
+				B1F718E81E2C3381000F9E5C /* Ruta.swift */,
+				B1F718E21E2C0C8C000F9E5C /* DataController.swift */,
+				B1F718E41E2C3346000F9E5C /* RutasModel.xcdatamodeld */,
+			);
+			name = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -110,15 +324,51 @@
 				B126D8C81E163C95009650C8 /* Sources */,
 				B126D8C91E163C95009650C8 /* Frameworks */,
 				B126D8CA1E163C95009650C8 /* Resources */,
+				B18BCC561E2978FC009B0909 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				B18BCC4D1E2978FC009B0909 /* PBXTargetDependency */,
 			);
 			name = proyectoFinal;
 			productName = proyectoFinal;
 			productReference = B126D8CC1E163C95009650C8 /* proyectoFinal.app */;
 			productType = "com.apple.product-type.application";
+		};
+		B18BCC2B1E2978FC009B0909 /* mapaWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B18BCC551E2978FC009B0909 /* Build configuration list for PBXNativeTarget "mapaWatch" */;
+			buildPhases = (
+				B18BCC2A1E2978FC009B0909 /* Resources */,
+				B18BCC541E2978FC009B0909 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B18BCC3B1E2978FC009B0909 /* PBXTargetDependency */,
+			);
+			name = mapaWatch;
+			productName = mapaWatch;
+			productReference = B18BCC2C1E2978FC009B0909 /* mapaWatch.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		B18BCC371E2978FC009B0909 /* mapaWatch Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B18BCC531E2978FC009B0909 /* Build configuration list for PBXNativeTarget "mapaWatch Extension" */;
+			buildPhases = (
+				B18BCC341E2978FC009B0909 /* Sources */,
+				B18BCC351E2978FC009B0909 /* Frameworks */,
+				B18BCC361E2978FC009B0909 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "mapaWatch Extension";
+			productName = "mapaWatch Extension";
+			productReference = B18BCC381E2978FC009B0909 /* mapaWatch Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -133,6 +383,24 @@
 					B126D8CB1E163C95009650C8 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = XDG23YSP5Z;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+					B18BCC2B1E2978FC009B0909 = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = XDG23YSP5Z;
+					};
+					B18BCC371E2978FC009B0909 = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = XDG23YSP5Z;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -150,6 +418,8 @@
 			projectRoot = "";
 			targets = (
 				B126D8CB1E163C95009650C8 /* proyectoFinal */,
+				B18BCC2B1E2978FC009B0909 /* mapaWatch */,
+				B18BCC371E2978FC009B0909 /* mapaWatch Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -160,8 +430,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				B126D8DA1E163C95009650C8 /* LaunchScreen.storyboard in Resources */,
+				B138BCCB1E292E5800E91359 /* hdar_close.png in Resources */,
+				B138BCCD1E292E5800E91359 /* hdar_close@3x.png in Resources */,
 				B126D8D71E163C95009650C8 /* Assets.xcassets in Resources */,
 				B126D8D51E163C95009650C8 /* Main.storyboard in Resources */,
+				B138BCCC1E292E5800E91359 /* hdar_close@2x.png in Resources */,
+				B138BCCA1E292E5800E91359 /* DebugMapViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B18BCC2A1E2978FC009B0909 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B18BCC321E2978FC009B0909 /* Assets.xcassets in Resources */,
+				B18BCC301E2978FC009B0909 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B18BCC361E2978FC009B0909 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B18BCC4A1E2978FC009B0909 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -173,7 +464,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				B1D551BC1E1D0AC0002099FA /* evento.swift in Sources */,
-				B126D8E61E1640DC009650C8 /* PuntoDeInteres.swift in Sources */,
+				B126D8E61E1640DC009650C8 /* cPuntoDeInteres.swift in Sources */,
+				B138BCC01E292E2E00E91359 /* ARConfiguration.swift in Sources */,
+				B138BCC41E292E3700E91359 /* DebugMapViewController.swift in Sources */,
+				B138BCC11E292E2E00E91359 /* ARTrackingManager.swift in Sources */,
+				B138BCD71E29310700E91359 /* TestAnnotationView.swift in Sources */,
 				B126D8E51E1640DC009650C8 /* cRuta.swift in Sources */,
 				B126D8EA1E16427F009650C8 /* infoRutaVC.swift in Sources */,
 				B126D9341E16A345009650C8 /* DecodificadoQRVC.swift in Sources */,
@@ -182,14 +477,50 @@
 				B126D8EC1E164795009650C8 /* MapaVC.swift in Sources */,
 				B126D8D01E163C95009650C8 /* AppDelegate.swift in Sources */,
 				B126D8E21E163F5F009650C8 /* MenuVC.swift in Sources */,
+				B138BCBF1E292E2E00E91359 /* ARAnnotationView.swift in Sources */,
+				B1F718E61E2C3346000F9E5C /* RutasModel.xcdatamodeld in Sources */,
 				B126D9361E16AA07009650C8 /* ControlDeNavegacion.swift in Sources */,
+				B1F718E31E2C0C8C000F9E5C /* DataController.swift in Sources */,
+				B138BCC21E292E2E00E91359 /* ARViewController.swift in Sources */,
+				B1F718E91E2C3381000F9E5C /* Ruta+CoreDataProperties.swift in Sources */,
 				B126D9321E16A11B009650C8 /* obtieneCodigoVC.swift in Sources */,
 				B1D551BE1E1D1EB9002099FA /* EventoCell.swift in Sources */,
+				B138BCBE1E292E2E00E91359 /* ARAnnotation.swift in Sources */,
 				B126D8E81E16414F009650C8 /* rutasTVC.swift in Sources */,
+				B138BCD51E29300C00E91359 /* ARCV.swift in Sources */,
+				B1F718EA1E2C3381000F9E5C /* Ruta.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B18BCC341E2978FC009B0909 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B10E89591E2AEEA000C8E035 /* RutasIC.swift in Sources */,
+				B1F718D01E2BD667000F9E5C /* Fila.swift in Sources */,
+				B18BCC441E2978FC009B0909 /* NotificationController.swift in Sources */,
+				B18BCC421E2978FC009B0909 /* ExtensionDelegate.swift in Sources */,
+				B18BCC481E2978FC009B0909 /* ComplicationController.swift in Sources */,
+				B18BCC401E2978FC009B0909 /* InterfaceController.swift in Sources */,
+				B18BCC461E2978FC009B0909 /* GlanceController.swift in Sources */,
+				B18BCC581E297AF5009B0909 /* tablaRutasIT.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B18BCC3B1E2978FC009B0909 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B18BCC371E2978FC009B0909 /* mapaWatch Extension */;
+			targetProxy = B18BCC3A1E2978FC009B0909 /* PBXContainerItemProxy */;
+		};
+		B18BCC4D1E2978FC009B0909 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B18BCC2B1E2978FC009B0909 /* mapaWatch */;
+			targetProxy = B18BCC4C1E2978FC009B0909 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		B126D8D31E163C95009650C8 /* Main.storyboard */ = {
@@ -206,6 +537,14 @@
 				B126D8D91E163C95009650C8 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		B18BCC2E1E2978FC009B0909 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B18BCC2F1E2978FC009B0909 /* Base */,
+			);
+			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -300,6 +639,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = proyectoFinal/proyectoFinal.entitlements;
 				INFOPLIST_FILE = proyectoFinal/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = gsanrey.proyectoFinal;
@@ -312,11 +652,76 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = proyectoFinal/proyectoFinal.entitlements;
 				INFOPLIST_FILE = proyectoFinal/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = gsanrey.proyectoFinal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		B18BCC4F1E2978FC009B0909 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				IBSC_MODULE = mapaWatch_Extension;
+				INFOPLIST_FILE = mapaWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = gsanrey.proyectoFinal.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Debug;
+		};
+		B18BCC501E2978FC009B0909 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				IBSC_MODULE = mapaWatch_Extension;
+				INFOPLIST_FILE = mapaWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = gsanrey.proyectoFinal.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Release;
+		};
+		B18BCC511E2978FC009B0909 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "mapaWatch Extension/mapaWatch Extension.entitlements";
+				INFOPLIST_FILE = "mapaWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = gsanrey.proyectoFinal.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Debug;
+		};
+		B18BCC521E2978FC009B0909 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "mapaWatch Extension/mapaWatch Extension.entitlements";
+				INFOPLIST_FILE = "mapaWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = gsanrey.proyectoFinal.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
 			};
 			name = Release;
 		};
@@ -341,7 +746,38 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		B18BCC531E2978FC009B0909 /* Build configuration list for PBXNativeTarget "mapaWatch Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B18BCC511E2978FC009B0909 /* Debug */,
+				B18BCC521E2978FC009B0909 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B18BCC551E2978FC009B0909 /* Build configuration list for PBXNativeTarget "mapaWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B18BCC4F1E2978FC009B0909 /* Debug */,
+				B18BCC501E2978FC009B0909 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		B1F718E41E2C3346000F9E5C /* RutasModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B1F718E51E2C3346000F9E5C /* RutasModel.xcdatamodel */,
+			);
+			currentVersion = B1F718E51E2C3346000F9E5C /* RutasModel.xcdatamodel */;
+			path = RutasModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = B126D8C41E163C95009650C8 /* Project object */;
 }

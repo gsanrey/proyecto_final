@@ -51,12 +51,20 @@ class infoRutaVC: UIViewController, CLLocationManagerDelegate, UIImagePickerCont
             //mapa.centerCoordinate = anotacion.coordenada!
         }
         
-        let centro = ruta!.camino[0]
+        let puntoCentral = ruta!.pasos[0] as CLLocation
+        let centro = puntoCentral.coordinate
         let region = MKCoordinateRegionMakeWithDistance(centro, 3000, 3000)
         mapa.setRegion(region, animated: true)
         mapa.centerCoordinate = centro
         
-        let polyline = MKPolyline(coordinates: &(ruta!.camino), count: ruta!.camino.count)
+        var miRuta = [CLLocationCoordinate2D]()
+        var cont = 0
+        while cont < ruta?.pasos.count{
+            miRuta.append((ruta?.pasos[cont].coordinate)!)
+            cont = cont+1
+        }
+        
+        let polyline = MKPolyline(coordinates: &(miRuta), count: ruta!.pasos.count)
         mapa.addOverlay(polyline, level: MKOverlayLevel.AboveRoads)
         
         miCamara.delegate = self
@@ -105,8 +113,8 @@ class infoRutaVC: UIViewController, CLLocationManagerDelegate, UIImagePickerCont
     @IBAction func comparte(sender: UIBarButtonItem) {
         print ("Vamos a compartir la ruta!")
         var elementos: [AnyObject] = []
-        elementos.append(self.ruta!.nombre)
-        elementos.append(self.ruta!.descripcion)
+        elementos.append(self.ruta!.nombre!)
+        elementos.append(self.ruta!.descripcion!)
 
         let actividadRD = UIActivityViewController(activityItems: elementos, applicationActivities: nil)
         actividadRD.popoverPresentationController?.sourceView = self.view

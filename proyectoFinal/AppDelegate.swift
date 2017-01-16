@@ -13,9 +13,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    // Creacion de la variable de getión de almacenamiento persistente
+    var dataController: DataController!
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // iniciación de la gestión del almacenamiento
+        self.dataController = DataController()
+        
         return true
     }
 

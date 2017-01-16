@@ -4,6 +4,26 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>mapaWatch (Complication).xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
+		<key>mapaWatch (Glance).xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
+		<key>mapaWatch (Notification).xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>mapaWatch.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 		<key>proyectoFinal.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -13,6 +33,11 @@
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>B126D8CB1E163C95009650C8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B18BCC2B1E2978FC009B0909</key>
 		<dict>
 			<key>primary</key>
 			<true/>

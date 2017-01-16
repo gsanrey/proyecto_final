@@ -7,12 +7,44 @@
 //
 
 import UIKit
+import WatchConnectivity
 
-class MenuVC: UIViewController {
+class MenuVC: UIViewController, WCSessionDelegate {
 
+    @IBOutlet weak var pruebaConexionWatch: UIButton!
+    @IBAction func pruebaConexionReloj(sender: UIButton) {
+        print("vamos a conectar! \(conecta)")
+        let applicationData = ["counterValue":String(conecta)]
+        
+        session!.sendMessage(applicationData, replyHandler: {(_: [String : AnyObject]) -> Void in
+            // handle reply from iPhone app here
+            }, errorHandler: {(error ) -> Void in
+                // catch any errors here
+        })
+        conecta = conecta + 1
+    }
+    
+    var session: WCSession? = nil
+    var conecta = 0
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        if (WCSession.isSupported()) {
+            session = WCSession.defaultSession()
+            session!.delegate = self
+            session!.activateSession()
+            
+        }
+        do {
+            let applicationDict = ["r1":"ruta1", "r2":"ruta2"]
+                try WCSession.defaultSession().updateApplicationContext(applicationDict)
+        } catch {
+            // Handle errors here
+        }
+        
         // Do any additional setup after loading the view.
     }
 

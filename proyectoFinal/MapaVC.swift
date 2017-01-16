@@ -44,13 +44,20 @@ class MapaVC: UIViewController, CLLocationManagerDelegate, UIImagePickerControll
         if let punto = manager.location{
             print("\(manager.location!.coordinate.latitude)  - \(manager.location!.coordinate.longitude) . \(manager.location!.horizontalAccuracy)")
             //mapa.centerCoordinate = punto.coordinate
-            if nuevaRuta?.camino.count == 0{
+            if nuevaRuta?.pasos.count == 0{
                 let region = MKCoordinateRegionMakeWithDistance(punto.coordinate, 300, 300)
                 mapa.setRegion(region, animated: true)
                 mapa.centerCoordinate = punto.coordinate
             }
-            nuevaRuta!.camino.append(punto.coordinate)
-            let polyline = MKPolyline(coordinates: &(nuevaRuta!.camino), count: nuevaRuta!.camino.count)
+            nuevaRuta!.pasos.append(punto)
+            
+            var dibujaRuta = [CLLocationCoordinate2D]()
+            var count = 0
+            while count < nuevaRuta?.pasos.count{
+                dibujaRuta.append((nuevaRuta?.pasos[count].coordinate)!)
+                count = count + 1
+            }
+            let polyline = MKPolyline(coordinates: &(dibujaRuta), count: nuevaRuta!.pasos.count)
             mapa.addOverlay(polyline, level: MKOverlayLevel.AboveRoads)
         }
     }
@@ -85,10 +92,10 @@ class MapaVC: UIViewController, CLLocationManagerDelegate, UIImagePickerControll
         }
         //textField.placeholder = "Foo!"
         vista.addAction(UIAlertAction(title: "añade", style: UIAlertActionStyle.Default, handler: { (nil) in
-            self.nuevaRuta?.puntosDeInteres.append(PuntoDeInteres(nombre: vista.textFields![0].text!, coordenada: (self.nuevaRuta?.camino.last)!))
+            self.nuevaRuta?.puntosDeInteres.append(cPuntoDeInteres(nombre: vista.textFields![0].text!, coordenada: (self.nuevaRuta?.pasos.last?.coordinate)!))
             let pin = MKPointAnnotation()
             pin.title = vista.textFields![0].text!
-            pin.coordinate = (self.nuevaRuta?.camino.last)!
+            pin.coordinate = (self.nuevaRuta?.pasos.last?.coordinate)!
             self.mapa.addAnnotation(pin)
             print(vista.textFields![0].text)
         
@@ -157,17 +164,24 @@ class MapaVC: UIViewController, CLLocationManagerDelegate, UIImagePickerControll
         return pinView
     }
     
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        print("HOLAAAAA")
+        let elemento = sender as! UIButton
+        print("HOLAAAAA \(elemento.restorationIdentifier)")
+
+        if elemento.currentTitle == "AR"{
+            print("realidad aumentada")
+            let destino = segue.destinationViewController as! ARCV
+            destino.rutaActual = nuevaRuta
+        }
 
         
     }
-    */
+    
 
 }

@@ -9,7 +9,7 @@
 import Foundation
 import CoreLocation
 
-class PuntoDeInteres{
+class cPuntoDeInteres{
     var nombre: String? = nil
     var coordenada: CLLocationCoordinate2D? = nil
     
