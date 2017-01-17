@@ -72,7 +72,7 @@ class ControladorDatos {
     func modificaRuta(id: Int, nombre: String?, descripcion: String?, foto: String?, camino: [CLLocation]? ){
         //let gRuta = NSEntityDescription.insertNewObjectForEntityForName("Ruta", inManagedObjectContext: self.managedObjectContext) as! Ruta
         let fetchRequest = NSFetchRequest(entityName: "Ruta")
-        fetchRequest.predicate = NSPredicate(format: "id = %@", id)
+        fetchRequest.predicate = NSPredicate(format: "id == %@", String(id))
         
         do{
             if let fetchResults = try self.managedObjectContext.executeFetchRequest(fetchRequest) as? [NSManagedObject] {
