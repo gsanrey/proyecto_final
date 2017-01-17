@@ -24,7 +24,7 @@ class rutasTVC: UITableViewController, WCSessionDelegate {
             if eruta.foto != nil{
                 UIImageWriteToSavedPhotosAlbum(eruta.foto!, nil, nil, nil)
             }
-            appDelegate.dataController.guardaRuta(eruta.nombre! , descripcion: eruta.descripcion!, foto: "tec", camino: eruta.pasos)
+            appDelegate.dataController.creaRuta(eruta.nombre! , descripcion: eruta.descripcion!, foto: "tec", camino: eruta.pasos)
             nueRuta = nil
         }
         
@@ -39,7 +39,7 @@ class rutasTVC: UITableViewController, WCSessionDelegate {
             for i in 0..<res.count{
                 let nRuta = res[i] as! Ruta
                 print("obtenemos la ruta \(nRuta.nombre) \(nRuta.descripcion)")
-                let comprobacionRuta = cRuta(nombre: nRuta.nombre!, descripcion: nRuta.description)
+                let comprobacionRuta = cRuta(id: Int(nRuta.id!), nombre: nRuta.nombre!, descripcion: nRuta.description)
                 comprobacionRuta.descripcion = nRuta.descripcion
                 comprobacionRuta.foto = UIImage(named: nRuta.foto!)
                 let camino = NSKeyedUnarchiver.unarchiveObjectWithData(nRuta.camino as! NSData) as! [CLLocation]
@@ -82,7 +82,7 @@ class rutasTVC: UITableViewController, WCSessionDelegate {
                 camino.append(CLLocation(latitude: 19.52748, longitude: -96.92315))
                 camino.append(CLLocation(latitude: 19.53748, longitude: -96.94315))
                 camino.append(CLLocation(latitude: 19.54748, longitude: -96.93315))
-                appDelegate.dataController.guardaRuta("primera" , descripcion: "PRIMERA", foto: "tec", camino: camino)
+                appDelegate.dataController.creaRuta("primera" , descripcion: "PRIMERA", foto: "tec", camino: camino)
                 // 2 ruta
                 camino = [CLLocation]()
                 camino.append(CLLocation(latitude: 19.359727, longitude: -99.257700))
@@ -108,7 +108,7 @@ class rutasTVC: UITableViewController, WCSessionDelegate {
             for i in 0..<res.count{
                 let nRuta = res[i] as! Ruta
                 print("obtenemos la ruta - \(nRuta.id) - \(nRuta.nombre) \(nRuta.descripcion) ")
-                let aniadeRuta = cRuta(nombre: nRuta.nombre!, descripcion: nRuta.description)
+                let aniadeRuta = cRuta(id: Int(nRuta.id!), nombre: nRuta.nombre!, descripcion: nRuta.description)
                 aniadeRuta.descripcion = nRuta.descripcion
                 aniadeRuta.foto = UIImage(named: nRuta.foto!)
                 let camino = NSKeyedUnarchiver.unarchiveObjectWithData(nRuta.camino as! NSData) as! [CLLocation]
@@ -204,12 +204,13 @@ class rutasTVC: UITableViewController, WCSessionDelegate {
      }
      */
     
+    /*
     @IBAction func aniade(sender: UIBarButtonItem) {
         print("Añadiendo para probar")
         aRutas!.append(cRuta(nombre: "2", descripcion: "la tercera"))
         self.tableView.reloadData()
     }
-    
+    */
     
     // MARK: - Navigation
     
@@ -219,7 +220,7 @@ class rutasTVC: UITableViewController, WCSessionDelegate {
         if sender?.title == "NUEVA"{
             let creaRuta = segue.destinationViewController as! MapaVC
             //let nuevaRuta = cRuta(nombre:  String(aRutas!.count + 1), descripcion: "")
-            nueRuta = cRuta(nombre:  String(aRutas!.count + 1), descripcion: "")
+            nueRuta = cRuta(id: -1, nombre:  String(aRutas!.count + 1), descripcion: "")
             creaRuta.nuevaRuta = nueRuta
             self.aRutas!.append(nueRuta!)
             //self.tableView.reloadData()

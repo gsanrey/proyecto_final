@@ -69,19 +69,40 @@ class ControladorDatos {
         
     }
     
-    func guardaRuta(nombre: String, descripcion: String, foto: String, camino: [CLLocation]? ){
-        let gRuta = NSEntityDescription.insertNewObjectForEntityForName("Ruta", inManagedObjectContext: self.managedObjectContext) as! Ruta
-        gRuta.nombre = nombre
-        gRuta.descripcion = descripcion
-        gRuta.foto = foto
-        if camino != nil{
-            gRuta.camino = NSKeyedArchiver.archivedDataWithRootObject(camino!)
-        }
-        do {
-            try self.managedObjectContext.save()
-        } catch {
+    func modificaRuta(id: Int, nombre: String?, descripcion: String?, foto: String?, camino: [CLLocation]? ){
+        //let gRuta = NSEntityDescription.insertNewObjectForEntityForName("Ruta", inManagedObjectContext: self.managedObjectContext) as! Ruta
+        let fetchRequest = NSFetchRequest(entityName: "Ruta")
+        fetchRequest.predicate = NSPredicate(format: "id = %@", id)
+        
+        do{
+            if let fetchResults = try self.managedObjectContext.executeFetchRequest(fetchRequest) as? [NSManagedObject] {
+                if fetchResults.count != 0{
+                    let managedObject = fetchResults[0]
+                    if nombre != nil{
+                        managedObject.setValue(nombre, forKey: "nombre")
+                    }
+                    if descripcion != nil{
+                        managedObject.setValue(descripcion, forKey: "descripcion")
+                    }
+                    if foto != nil{
+                        managedObject.setValue(foto, forKey: "foto")
+                    }
+                    if camino != nil{
+                        managedObject.setValue(camino, forKey: "camino")
+                    }
+                
+                    try self.managedObjectContext.save()
+                    print("RUTA MODIFICADA ...")
+                }
+                else{
+                    print("ERROR ID DE LA RUTA NO SE ENCUENTRA")
+                }
+            }
+        }catch{
             fatalError("couldn't save context")
         }
+        
+
     }
     
     

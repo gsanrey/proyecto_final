@@ -11,6 +11,7 @@ import Foundation
 import CoreLocation
 
 class cRuta{
+    var id: Int
     var nombre: String? = ""
     var descripcion: String? = ""
     //var camino = [CLLocationCoordinate2D]()
@@ -21,7 +22,8 @@ class cRuta{
     var puntosDeInteres: [cPuntoDeInteres] = [cPuntoDeInteres]()
     
 
-    init(nombre: String, descripcion: String){
+    init(id: Int, nombre: String, descripcion: String){
+        self.id = id
         self.nombre = nombre
         self.descripcion = descripcion
     }
