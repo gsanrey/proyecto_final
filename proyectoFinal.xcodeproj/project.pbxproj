@@ -21,6 +21,12 @@
 		B126D9321E16A11B009650C8 /* obtieneCodigoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B126D9311E16A11B009650C8 /* obtieneCodigoVC.swift */; };
 		B126D9341E16A345009650C8 /* DecodificadoQRVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B126D9331E16A345009650C8 /* DecodificadoQRVC.swift */; };
 		B126D9361E16AA07009650C8 /* ControlDeNavegacion.swift in Sources */ = {isa = PBXBuildFile; fileRef = B126D9351E16AA07009650C8 /* ControlDeNavegacion.swift */; };
+		B133FF701E2E1721008FF063 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B133FF6E1E2E1721008FF063 /* Model.xcdatamodeld */; };
+		B133FF721E2E177B008FF063 /* ControladorDatos.swift in Sources */ = {isa = PBXBuildFile; fileRef = B133FF711E2E177B008FF063 /* ControladorDatos.swift */; };
+		B133FF771E2E17B3008FF063 /* Entity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B133FF731E2E17B3008FF063 /* Entity+CoreDataProperties.swift */; };
+		B133FF781E2E17B3008FF063 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B133FF741E2E17B3008FF063 /* Entity.swift */; };
+		B133FF791E2E17B3008FF063 /* Ruta+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B133FF751E2E17B3008FF063 /* Ruta+CoreDataProperties.swift */; };
+		B133FF7A1E2E17B3008FF063 /* Ruta.swift in Sources */ = {isa = PBXBuildFile; fileRef = B133FF761E2E17B3008FF063 /* Ruta.swift */; };
 		B138BCBE1E292E2E00E91359 /* ARAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B138BCB91E292E2E00E91359 /* ARAnnotation.swift */; };
 		B138BCBF1E292E2E00E91359 /* ARAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B138BCBA1E292E2E00E91359 /* ARAnnotationView.swift */; };
 		B138BCC01E292E2E00E91359 /* ARConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B138BCBB1E292E2E00E91359 /* ARConfiguration.swift */; };
@@ -52,10 +58,6 @@
 		B1D551BC1E1D0AC0002099FA /* evento.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D551BB1E1D0AC0002099FA /* evento.swift */; };
 		B1D551BE1E1D1EB9002099FA /* EventoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D551BD1E1D1EB9002099FA /* EventoCell.swift */; };
 		B1F718D01E2BD667000F9E5C /* Fila.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F718CF1E2BD667000F9E5C /* Fila.swift */; };
-		B1F718E31E2C0C8C000F9E5C /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F718E21E2C0C8C000F9E5C /* DataController.swift */; };
-		B1F718E61E2C3346000F9E5C /* RutasModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B1F718E41E2C3346000F9E5C /* RutasModel.xcdatamodeld */; };
-		B1F718E91E2C3381000F9E5C /* Ruta+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F718E71E2C3381000F9E5C /* Ruta+CoreDataProperties.swift */; };
-		B1F718EA1E2C3381000F9E5C /* Ruta.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F718E81E2C3381000F9E5C /* Ruta.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,6 +119,12 @@
 		B126D9311E16A11B009650C8 /* obtieneCodigoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = obtieneCodigoVC.swift; sourceTree = "<group>"; };
 		B126D9331E16A345009650C8 /* DecodificadoQRVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecodificadoQRVC.swift; sourceTree = "<group>"; };
 		B126D9351E16AA07009650C8 /* ControlDeNavegacion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlDeNavegacion.swift; sourceTree = "<group>"; };
+		B133FF6F1E2E1721008FF063 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		B133FF711E2E177B008FF063 /* ControladorDatos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControladorDatos.swift; sourceTree = "<group>"; };
+		B133FF731E2E17B3008FF063 /* Entity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Entity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		B133FF741E2E17B3008FF063 /* Entity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
+		B133FF751E2E17B3008FF063 /* Ruta+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Ruta+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		B133FF761E2E17B3008FF063 /* Ruta.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ruta.swift; sourceTree = "<group>"; };
 		B138BCB91E292E2E00E91359 /* ARAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARAnnotation.swift; sourceTree = "<group>"; };
 		B138BCBA1E292E2E00E91359 /* ARAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARAnnotationView.swift; sourceTree = "<group>"; };
 		B138BCBB1E292E2E00E91359 /* ARConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARConfiguration.swift; sourceTree = "<group>"; };
@@ -153,10 +161,6 @@
 		B1F718CF1E2BD667000F9E5C /* Fila.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fila.swift; sourceTree = "<group>"; };
 		B1F718D11E2BFA6D000F9E5C /* proyectoFinal.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = proyectoFinal.entitlements; sourceTree = "<group>"; };
 		B1F718D21E2BFA94000F9E5C /* mapaWatch Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "mapaWatch Extension.entitlements"; sourceTree = "<group>"; };
-		B1F718E21E2C0C8C000F9E5C /* DataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
-		B1F718E51E2C3346000F9E5C /* RutasModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RutasModel.xcdatamodel; sourceTree = "<group>"; };
-		B1F718E71E2C3381000F9E5C /* Ruta+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Ruta+CoreDataProperties.swift"; path = "../Ruta+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		B1F718E81E2C3381000F9E5C /* Ruta.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Ruta.swift; path = ../Ruta.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +187,10 @@
 		B126D8C31E163C95009650C8 = {
 			isa = PBXGroup;
 			children = (
+				B133FF731E2E17B3008FF063 /* Entity+CoreDataProperties.swift */,
+				B133FF741E2E17B3008FF063 /* Entity.swift */,
+				B133FF751E2E17B3008FF063 /* Ruta+CoreDataProperties.swift */,
+				B133FF761E2E17B3008FF063 /* Ruta.swift */,
 				B138BCD21E292F7B00E91359 /* MapKit.framework */,
 				B138BCD01E292F7400E91359 /* CoreMotion.framework */,
 				B138BCCE1E292F6B00E91359 /* CoreLocation.framework */,
@@ -306,10 +314,8 @@
 		B1F718D31E2C06E5000F9E5C /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				B1F718E71E2C3381000F9E5C /* Ruta+CoreDataProperties.swift */,
-				B1F718E81E2C3381000F9E5C /* Ruta.swift */,
-				B1F718E21E2C0C8C000F9E5C /* DataController.swift */,
-				B1F718E41E2C3346000F9E5C /* RutasModel.xcdatamodeld */,
+				B133FF711E2E177B008FF063 /* ControladorDatos.swift */,
+				B133FF6E1E2E1721008FF063 /* Model.xcdatamodeld */,
 			);
 			name = CoreData;
 			sourceTree = "<group>";
@@ -464,7 +470,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B1D551BC1E1D0AC0002099FA /* evento.swift in Sources */,
+				B133FF7A1E2E17B3008FF063 /* Ruta.swift in Sources */,
+				B133FF701E2E1721008FF063 /* Model.xcdatamodeld in Sources */,
 				B126D8E61E1640DC009650C8 /* cPuntoDeInteres.swift in Sources */,
+				B133FF791E2E17B3008FF063 /* Ruta+CoreDataProperties.swift in Sources */,
 				B138BCC01E292E2E00E91359 /* ARConfiguration.swift in Sources */,
 				B138BCC41E292E3700E91359 /* DebugMapViewController.swift in Sources */,
 				B138BCC11E292E2E00E91359 /* ARTrackingManager.swift in Sources */,
@@ -472,23 +481,22 @@
 				B126D8E51E1640DC009650C8 /* cRuta.swift in Sources */,
 				B126D8EA1E16427F009650C8 /* infoRutaVC.swift in Sources */,
 				B126D9341E16A345009650C8 /* DecodificadoQRVC.swift in Sources */,
+				B133FF781E2E17B3008FF063 /* Entity.swift in Sources */,
+				B133FF771E2E17B3008FF063 /* Entity+CoreDataProperties.swift in Sources */,
 				B1C5301E1E2512D5000D6D65 /* ComoLlegarVC.swift in Sources */,
 				B1D551BA1E1D0983002099FA /* EventosTVC.swift in Sources */,
 				B126D8EC1E164795009650C8 /* MapaVC.swift in Sources */,
 				B126D8D01E163C95009650C8 /* AppDelegate.swift in Sources */,
 				B126D8E21E163F5F009650C8 /* MenuVC.swift in Sources */,
 				B138BCBF1E292E2E00E91359 /* ARAnnotationView.swift in Sources */,
-				B1F718E61E2C3346000F9E5C /* RutasModel.xcdatamodeld in Sources */,
 				B126D9361E16AA07009650C8 /* ControlDeNavegacion.swift in Sources */,
-				B1F718E31E2C0C8C000F9E5C /* DataController.swift in Sources */,
 				B138BCC21E292E2E00E91359 /* ARViewController.swift in Sources */,
-				B1F718E91E2C3381000F9E5C /* Ruta+CoreDataProperties.swift in Sources */,
 				B126D9321E16A11B009650C8 /* obtieneCodigoVC.swift in Sources */,
+				B133FF721E2E177B008FF063 /* ControladorDatos.swift in Sources */,
 				B1D551BE1E1D1EB9002099FA /* EventoCell.swift in Sources */,
 				B138BCBE1E292E2E00E91359 /* ARAnnotation.swift in Sources */,
 				B126D8E81E16414F009650C8 /* rutasTVC.swift in Sources */,
 				B138BCD51E29300C00E91359 /* ARCV.swift in Sources */,
-				B1F718EA1E2C3381000F9E5C /* Ruta.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -767,13 +775,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		B1F718E41E2C3346000F9E5C /* RutasModel.xcdatamodeld */ = {
+		B133FF6E1E2E1721008FF063 /* Model.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				B1F718E51E2C3346000F9E5C /* RutasModel.xcdatamodel */,
+				B133FF6F1E2E1721008FF063 /* Model.xcdatamodel */,
 			);
-			currentVersion = B1F718E51E2C3346000F9E5C /* RutasModel.xcdatamodel */;
-			path = RutasModel.xcdatamodeld;
+			currentVersion = B133FF6F1E2E1721008FF063 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

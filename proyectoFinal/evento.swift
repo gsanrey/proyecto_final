@@ -11,9 +11,15 @@ import Foundation
 class Evento {
     var nombre: String? = nil
     var descripcion: String? = nil
+    var fecha: NSDate? = nil
+
     
-    init(nombre: String, descripcion: String){
+    init(nombre: String, descripcion: String, fecha: String){
         self.nombre = nombre
         self.descripcion = descripcion
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let date = dateFormatter.dateFromString(fecha)
+        self.fecha = date
     }
 }

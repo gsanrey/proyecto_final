@@ -1,5 +1,5 @@
 //
-//  Ruta+CoreDataProperties.swift
+//  Entity+CoreDataProperties.swift
 //  proyectoFinal
 //
 //  Created by Gabriel Urso Santana Reyes on 17/1/17.
@@ -12,11 +12,9 @@
 import Foundation
 import CoreData
 
-extension Ruta {
+extension Entity {
 
-    @NSManaged var nombre: String?
-    @NSManaged var descripcion: String?
-    @NSManaged var foto: String?
-    @NSManaged var camino: NSObject?
+    @NSManaged var attribute: String?
+    @NSManaged var attribute1: String?
 
 }

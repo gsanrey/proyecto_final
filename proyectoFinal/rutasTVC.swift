@@ -32,6 +32,7 @@ class rutasTVC: UITableViewController, WCSessionDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("comenzamos la tabla de rutas")
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -39,22 +40,6 @@ class rutasTVC: UITableViewController, WCSessionDelegate {
         self.title = "RUTAS"
         
         aRutas = [cRuta]()
-        /*
-        aRutas!.append(cRuta(nombre: "primera", descripcion: "la numero uno primera"))
-        aRutas![0].foto = UIImage(named: "tec")
-        aRutas!.append(cRuta(nombre: "segunda", descripcion: "la segunda"))
-        aRutas![1].foto = UIImage(named: "tec")
-        
-        let coorPtoInteres = CLLocationCoordinate2D(latitude: 19.52748, longitude: -96.92315)
-        aRutas![0].puntosDeInteres.append(cPuntoDeInteres(nombre: "prueba", coordenada: coorPtoInteres))
-        aRutas![0].camino.append(CLLocationCoordinate2D(latitude: 19.52748, longitude: -96.92315))
-        aRutas![0].camino.append(CLLocationCoordinate2D(latitude: 19.53748, longitude: -96.94315))
-        aRutas![0].camino.append(CLLocationCoordinate2D(latitude: 19.54748, longitude: -96.93315))
-
-        aRutas![1].camino.append(CLLocationCoordinate2D(latitude: 19.359727, longitude: -99.257700))
-        aRutas![1].camino.append(CLLocationCoordinate2D(latitude: 19.362896, longitude: -99.268846))
-        aRutas![1].camino.append(CLLocationCoordinate2D(latitude: 19.358543, longitude: -99.276304))
-        */
         
         // Almacenamiento persistente de varias rutas si no existen datos
         var req = NSFetchRequest()
@@ -64,20 +49,20 @@ class rutasTVC: UITableViewController, WCSessionDelegate {
         do{
             let res = try appDelegate.dataController.managedObjectContext.executeFetchRequest(req)
             if res.count < 1{
+                print("Al no haber datos anteriores, creamos un par de ellos")
                 // 1 ruta
                 var camino = [CLLocation]()
                 camino.append(CLLocation(latitude: 19.52748, longitude: -96.92315))
                 camino.append(CLLocation(latitude: 19.53748, longitude: -96.94315))
                 camino.append(CLLocation(latitude: 19.54748, longitude: -96.93315))
-                appDelegate.dataController.guardaRuta("primera" , descripcion: "primera", foto: "tec", camino: camino)
-                let coorPtoInteres = CLLocationCoordinate2D(latitude: 19.52748, longitude: -96.92315)
-                aRutas![0].puntosDeInteres.append(cPuntoDeInteres(nombre: "prueba", coordenada: coorPtoInteres))
+                appDelegate.dataController.guardaRuta("primera" , descripcion: "PRIMERA", foto: "tec", camino: camino)
                 // 2 ruta
                 camino = [CLLocation]()
                 camino.append(CLLocation(latitude: 19.359727, longitude: -99.257700))
                 camino.append(CLLocation(latitude: 19.362896, longitude: -99.268846))
                 camino.append(CLLocation(latitude: 19.358543, longitude: -99.276304))
-                appDelegate.dataController.guardaRuta("primera" , descripcion: "primera", foto: "tec", camino: camino)
+                appDelegate.dataController.guardaRuta("segunda" , descripcion: "SEGUNDA", foto: "tec", camino: camino)
+
             }
         }
         catch{
@@ -85,24 +70,21 @@ class rutasTVC: UITableViewController, WCSessionDelegate {
         }
 
         //lectura de las rutas persistentes
-        print("lectura de lo que existe de rutas")
         req = NSFetchRequest()
         req.entity = NSEntityDescription.entityForName("Ruta", inManagedObjectContext: appDelegate.dataController.managedObjectContext)
         do{
             let res = try appDelegate.dataController.managedObjectContext.executeFetchRequest(req)
-            print("Se han encontrado: \(res.count)")
+            print("Vamos a obtener los datos de las rutas que hay ... \(res.count)")
             for i in 0..<res.count{
-                //print ("ruta: \(res[i].nombre)")
-                //print ("ruta: \(res[i].descripcion)")
-                
                 let nRuta = res[i] as! Ruta
-                var camino = NSKeyedUnarchiver.unarchiveObjectWithData(nRuta.camino as! NSData) as! [CLLocation]
-                //print ("se han tomado \(camino.count) puntos y el primero es de la ruta: \(camino[0])")
-                
+                print("obtenemos la ruta \(nRuta.nombre) \(nRuta.descripcion)")
                 let aniadeRuta = cRuta(nombre: nRuta.nombre!, descripcion: nRuta.description)
+                //aniadeRuta.descripcion = nRuta.descripcion
                 aniadeRuta.foto = UIImage(named: nRuta.foto!)
+                let camino = NSKeyedUnarchiver.unarchiveObjectWithData(nRuta.camino as! NSData) as! [CLLocation]
                 aniadeRuta.pasos = camino
                 aRutas?.append(aniadeRuta)
+                print("\(aniadeRuta.nombre) \(aniadeRuta.descripcion)")
                 
             }
         }
@@ -111,11 +93,32 @@ class rutasTVC: UITableViewController, WCSessionDelegate {
             abort()
         }
         
+        print("-------------------     y ahora a probar ")
+        let rreq = NSFetchRequest()
+        rreq.entity = NSEntityDescription.entityForName("Entity", inManagedObjectContext: appDelegate.dataController.managedObjectContext)
+            do{
+                let res = try appDelegate.dataController.managedObjectContext.executeFetchRequest(rreq)
+                for i in 0..<res.count{
+                    let d = res[i] as! Entity
+                    //print("\(d.a) \(d.b)")
+                    
+                }
+
+            }
+            catch{
+                print("error leer")
+                abort()
+        }
+
+        
+        
+        // CREACION DE PUNTOS DE INTERÉS
+        let coorPtoInteres = CLLocationCoordinate2D(latitude: 19.52748, longitude: -96.92315)
+        aRutas![0].puntosDeInteres.append(cPuntoDeInteres(nombre: "prueba", coordenada: coorPtoInteres))
         
     }
-    
 
-    
+
     // MARK: - Table view data source
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {

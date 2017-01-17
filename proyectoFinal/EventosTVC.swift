@@ -16,31 +16,24 @@ class EventosTVC: UITableViewController {
         super.viewDidLoad()
 
         self.title = "Listado de Eventos"
-        eventos.append(Evento(nombre: "primer evento", descripcion: "es una prueba"))
-        eventos.append(Evento(nombre: "segundo evento", descripcion: "es una prueba"))
+        //eventos.append(Evento(nombre: "primer evento", descripcion: "es una prueba"))
+        //eventos.append(Evento(nombre: "segundo evento", descripcion: "es una prueba"))
         sincroniza()
     }
 
     func sincroniza() {
-        print ("vamos por los datos!!")
         let jsonURL = NSURL(string: "http://83.59.126.246:8000/events/listado")!
-        
         let datos = NSData(contentsOfURL: jsonURL)
-        print ("esto es lo que tengo!!")
         do{
             let json = try NSJSONSerialization.JSONObjectWithData(datos!, options: NSJSONReadingOptions.MutableLeaves )
             let evento = json as! NSDictionary
-            print ("busco los eventos: ...")
             let eventos = evento["eventos"] as! NSArray
             for evento in eventos{
-                print ("a por el nombre:")
-                let nombre = evento["nombre"] as! NSString
-                let descripcion = evento["descripcion"] as! NSString
-                let fecha = evento["fecha"] as! NSString
-                print(nombre, descripcion, fecha)
+                let nombre = evento["nombre"] as! String
+                let descripcion = evento["descripcion"] as! String
+                let fecha = evento["fecha"] as! String
+                self.eventos.append(Evento(nombre: nombre, descripcion: descripcion, fecha: fecha))
             }
-
-
         }
         catch _ {
         }

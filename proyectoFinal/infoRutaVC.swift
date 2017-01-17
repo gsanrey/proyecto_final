@@ -14,7 +14,7 @@ class infoRutaVC: UIViewController, CLLocationManagerDelegate, UIImagePickerCont
     var ruta: cRuta? = nil
 
     @IBOutlet weak var eNombre: UITextField!
-    @IBOutlet weak var eDescripcion: UITextField!
+    @IBOutlet weak var eDescripcion: UITextView!
     @IBOutlet weak var mapa: MKMapView!
     @IBOutlet weak var foto: UIImageView!
     
@@ -33,8 +33,8 @@ class infoRutaVC: UIViewController, CLLocationManagerDelegate, UIImagePickerCont
         self.navigationItem.rightBarButtonItem = button1
         
         
-        eNombre.delegate = self
-        eDescripcion.delegate = self
+        //eNombre.delegate = self
+        //eDescripcion.delegate = self
         
         eNombre.text = self.ruta?.nombre
         eDescripcion.text  = self.ruta?.descripcion

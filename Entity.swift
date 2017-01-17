@@ -1,5 +1,5 @@
 //
-//  Ruta.swift
+//  Entity.swift
 //  proyectoFinal
 //
 //  Created by Gabriel Urso Santana Reyes on 17/1/17.
@@ -10,7 +10,7 @@ import Foundation
 import CoreData
 
 
-class Ruta: NSManagedObject {
+class Entity: NSManagedObject {
 
 // Insert code here to add functionality to your managed object subclass
 
