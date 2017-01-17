@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import CoreData
 
 class infoRutaVC: UIViewController, CLLocationManagerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, MKMapViewDelegate, UITextFieldDelegate  {
 
@@ -86,6 +87,9 @@ class infoRutaVC: UIViewController, CLLocationManagerDelegate, UIImagePickerCont
     @IBAction func guarda(sender: UIButton) {
         ruta?.descripcion = eDescripcion.text!
         ruta?.nombre = eNombre.text!
+        var req = NSFetchRequest()
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        appDelegate.dataController.guardaRuta(eNombre.text! , descripcion: eDescripcion.text!, foto: "tec", camino: nil)
     }
 
     @IBAction func hacerFoto(sender: UIButton) {

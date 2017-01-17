@@ -29,7 +29,7 @@ class ControladorDatos {
         moc.persistentStoreCoordinator = psc
         
         let urls = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
-        let persistantStoreFileURL = urls[0].URLByAppendingPathComponent("labase.sqlite")
+        let persistantStoreFileURL = urls[0].URLByAppendingPathComponent("labase0.sqlite")
         
         do {
             try psc.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: persistantStoreFileURL, options: nil)
@@ -49,12 +49,34 @@ class ControladorDatos {
         }
     }
     
-    func guardaRuta(nombre: String, descripcion: String, foto: String, camino: [CLLocation] ){
+    func creaRuta(nombre: String, descripcion: String, foto: String, camino: [CLLocation] ){
+        // Creación de una nueva ruta
+        let nuevaRuta = NSEntityDescription.insertNewObjectForEntityForName("Ruta", inManagedObjectContext: self.managedObjectContext) as! Ruta
+        nuevaRuta.nombre = nombre
+        nuevaRuta.descripcion = descripcion
+        nuevaRuta.foto = foto
+        nuevaRuta.camino = NSKeyedArchiver.archivedDataWithRootObject(camino)
+        
+        let req = NSFetchRequest()
+        req.entity = NSEntityDescription.entityForName("Ruta", inManagedObjectContext: self.managedObjectContext)
+        do{
+            let res = try self.managedObjectContext.executeFetchRequest(req)
+            nuevaRuta.id = res.count + 1
+            try self.managedObjectContext.save()
+        } catch {
+            fatalError("couldn't save context or execute search")
+        }
+        
+    }
+    
+    func guardaRuta(nombre: String, descripcion: String, foto: String, camino: [CLLocation]? ){
         let gRuta = NSEntityDescription.insertNewObjectForEntityForName("Ruta", inManagedObjectContext: self.managedObjectContext) as! Ruta
         gRuta.nombre = nombre
         gRuta.descripcion = descripcion
         gRuta.foto = foto
-        gRuta.camino = NSKeyedArchiver.archivedDataWithRootObject(camino)
+        if camino != nil{
+            gRuta.camino = NSKeyedArchiver.archivedDataWithRootObject(camino!)
+        }
         do {
             try self.managedObjectContext.save()
         } catch {

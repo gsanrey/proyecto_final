@@ -18,5 +18,6 @@ extension Ruta {
     @NSManaged var descripcion: String?
     @NSManaged var foto: String?
     @NSManaged var camino: NSObject?
+    @NSManaged var id: NSNumber?
 
 }

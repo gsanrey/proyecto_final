@@ -27,6 +27,33 @@ class rutasTVC: UITableViewController, WCSessionDelegate {
             appDelegate.dataController.guardaRuta(eruta.nombre! , descripcion: eruta.descripcion!, foto: "tec", camino: eruta.pasos)
             nueRuta = nil
         }
+        
+        // comprobacion de la grabacion
+        //lectura de las rutas persistentes
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let req = NSFetchRequest()
+        req.entity = NSEntityDescription.entityForName("Ruta", inManagedObjectContext: appDelegate.dataController.managedObjectContext)
+        do{
+            let res = try appDelegate.dataController.managedObjectContext.executeFetchRequest(req)
+            print("Vamos a obtener los datos de las rutas que hay ... \(res.count)")
+            for i in 0..<res.count{
+                let nRuta = res[i] as! Ruta
+                print("obtenemos la ruta \(nRuta.nombre) \(nRuta.descripcion)")
+                let comprobacionRuta = cRuta(nombre: nRuta.nombre!, descripcion: nRuta.description)
+                comprobacionRuta.descripcion = nRuta.descripcion
+                comprobacionRuta.foto = UIImage(named: nRuta.foto!)
+                let camino = NSKeyedUnarchiver.unarchiveObjectWithData(nRuta.camino as! NSData) as! [CLLocation]
+                comprobacionRuta.pasos = camino
+                print("\(comprobacionRuta.nombre) \(comprobacionRuta.descripcion)")
+                
+            }
+        }
+        catch{
+            print("error leer")
+            abort()
+        }
+        
+        
         self.tableView.reloadData()
     }
     
@@ -61,7 +88,10 @@ class rutasTVC: UITableViewController, WCSessionDelegate {
                 camino.append(CLLocation(latitude: 19.359727, longitude: -99.257700))
                 camino.append(CLLocation(latitude: 19.362896, longitude: -99.268846))
                 camino.append(CLLocation(latitude: 19.358543, longitude: -99.276304))
-                appDelegate.dataController.guardaRuta("segunda" , descripcion: "SEGUNDA", foto: "tec", camino: camino)
+                appDelegate.dataController.creaRuta("segunda" , descripcion: "SEGUNDA", foto: "tec", camino: camino)
+                appDelegate.dataController.creaRuta("we" , descripcion: "SEGUNDA", foto: "tec", camino: camino)
+                appDelegate.dataController.creaRuta("re" , descripcion: "SEGUNDA", foto: "tec", camino: camino)
+                appDelegate.dataController.creaRuta("qw" , descripcion: "SEGUNDA", foto: "tec", camino: camino)
 
             }
         }
@@ -77,9 +107,9 @@ class rutasTVC: UITableViewController, WCSessionDelegate {
             print("Vamos a obtener los datos de las rutas que hay ... \(res.count)")
             for i in 0..<res.count{
                 let nRuta = res[i] as! Ruta
-                print("obtenemos la ruta \(nRuta.nombre) \(nRuta.descripcion)")
+                print("obtenemos la ruta - \(nRuta.id) - \(nRuta.nombre) \(nRuta.descripcion) ")
                 let aniadeRuta = cRuta(nombre: nRuta.nombre!, descripcion: nRuta.description)
-                //aniadeRuta.descripcion = nRuta.descripcion
+                aniadeRuta.descripcion = nRuta.descripcion
                 aniadeRuta.foto = UIImage(named: nRuta.foto!)
                 let camino = NSKeyedUnarchiver.unarchiveObjectWithData(nRuta.camino as! NSData) as! [CLLocation]
                 aniadeRuta.pasos = camino
