@@ -49,7 +49,7 @@ class MenuVC: UIViewController, WCSessionDelegate {
     }
 
     @IBAction func acerdaDe(sender: UIButton) {
-        let ventana = UIAlertController(title: "Acerca de", message: "Proyecto Final de Desarrollo de Aplicaciones iOS. Aplicación desarrollada por ©Gabriel Urso Santana Reyes ", preferredStyle: UIAlertControllerStyle.Alert)
+        let ventana = UIAlertController(title: "Acerca de", message: "Proyecto Final de Desarrollo de Aplicaciones iOS.\nVersión 0.9 \nAplicación desarrollada por:\n©Gabriel Urso Santana Reyes", preferredStyle: UIAlertControllerStyle.Alert)
         ventana.addAction(UIAlertAction(title: "continuar", style: UIAlertActionStyle.Default, handler: { (nil) in
             print("continuamos...")
             

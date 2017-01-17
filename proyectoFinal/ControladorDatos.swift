@@ -66,14 +66,11 @@ class ControladorDatos {
         } catch {
             fatalError("couldn't save context or execute search")
         }
-        
     }
-    
+
     func modificaRuta(id: Int, nombre: String?, descripcion: String?, foto: String?, camino: [CLLocation]? ){
-        //let gRuta = NSEntityDescription.insertNewObjectForEntityForName("Ruta", inManagedObjectContext: self.managedObjectContext) as! Ruta
         let fetchRequest = NSFetchRequest(entityName: "Ruta")
         fetchRequest.predicate = NSPredicate(format: "id == %@", String(id))
-        
         do{
             if let fetchResults = try self.managedObjectContext.executeFetchRequest(fetchRequest) as? [NSManagedObject] {
                 if fetchResults.count != 0{
@@ -90,9 +87,7 @@ class ControladorDatos {
                     if camino != nil{
                         managedObject.setValue(camino, forKey: "camino")
                     }
-                
                     try self.managedObjectContext.save()
-                    print("RUTA MODIFICADA ...")
                 }
                 else{
                     print("ERROR ID DE LA RUTA NO SE ENCUENTRA")
@@ -101,11 +96,8 @@ class ControladorDatos {
         }catch{
             fatalError("couldn't save context")
         }
-        
-
     }
-    
-    
+
 }
 
 

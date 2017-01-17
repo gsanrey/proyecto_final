@@ -16,8 +16,6 @@ class EventosTVC: UITableViewController {
         super.viewDidLoad()
 
         self.title = "Listado de Eventos"
-        //eventos.append(Evento(nombre: "primer evento", descripcion: "es una prueba"))
-        //eventos.append(Evento(nombre: "segundo evento", descripcion: "es una prueba"))
         sincroniza()
     }
 
